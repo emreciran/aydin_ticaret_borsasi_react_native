@@ -21,7 +21,10 @@ const BottomNav = () => {
         <Text>Kurumsal</Text>
       </View>
       <View style={styles.group}>
-        <TouchableOpacity style={styles.circle}>
+        <TouchableOpacity
+          style={styles.circle}
+          onPress={() => navigation.navigate("Duyurular")}
+        >
           <Ionicons name="megaphone-outline" size={28} color="#fff" />
         </TouchableOpacity>
         <Text>Duyuru</Text>
@@ -44,7 +47,7 @@ const BottomNav = () => {
         </TouchableOpacity>
         <Text>Aidat/Üye</Text>
       </View>
-      <View style={{flexDirection: "row", gap: 18}}>
+      <View style={{ flexDirection: "row", gap: 18 }}>
         <View style={styles.group}>
           <TouchableOpacity style={styles.circle}>
             <FontAwesome name="exchange" size={28} color="#fff" />

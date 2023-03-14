@@ -6,6 +6,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { Image, StyleSheet } from "react-native";
 import Logo from "../../assets/logo.png";
 import Kurumsal from "../screens/Kurumsal";
+import Duyurular from "../screens/Duyurular";
+import DuyuruDetay from "../screens/DuyuruDetay";
 
 const Stack = createNativeStackNavigator();
 
@@ -40,7 +42,12 @@ const Navigations = () => {
             ),
           }}
         />
-        <Stack.Screen name="Kurumsal" component={Kurumsal} options={{}} />
+        <Stack.Screen name="Kurumsal" component={Kurumsal} />
+        <Stack.Screen name="Duyurular" component={Duyurular} />
+        <Stack.Screen
+          name="DuyuruDetay"
+          component={DuyuruDetay}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
