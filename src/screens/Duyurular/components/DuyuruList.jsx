@@ -10,7 +10,7 @@ const DuyuruList = ({ data }) => {
       contentContainerStyle={{ flexGrow: 1 }}
       style={{ padding: 12 }}
     >
-      {data.map((item, index) => (
+      {data?.map((item, index) => (
         <DuyuruItem duyuru={item} key={index} />
       ))}
     </ScrollView>

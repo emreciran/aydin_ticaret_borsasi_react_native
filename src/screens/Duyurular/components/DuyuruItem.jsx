@@ -28,7 +28,7 @@ const DuyuruItem = ({ duyuru }) => {
           color="#3A98B9"
           style={{ alignSelf: "flex-end" }}
         />
-        <Text style={{ fontSize: 13 }}>{duyuru.date}</Text>
+        <Text style={{ fontSize: 13 }}>{duyuru.createdDate}</Text>
       </View>
     </TouchableOpacity>
   );
