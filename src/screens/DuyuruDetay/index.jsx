@@ -1,10 +1,24 @@
-import { View, Text, Button, ScrollView, Image } from "react-native";
+import {
+  View,
+  Text,
+  Button,
+  ScrollView,
+  Image,
+  useWindowDimensions,
+} from "react-native";
 import React, { useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import styles from "./styles/DuyuruDetay";
 import * as WebBrowser from "expo-web-browser";
+import RenderHtml from "react-native-render-html";
 
 const DuyuruDetay = ({ route }) => {
+  const source = {
+    html: route.params.duyuru.details,
+  };
+
+  const { width } = useWindowDimensions();
+
   const navigation = useNavigation();
 
   useEffect(() => {
@@ -21,8 +35,7 @@ const DuyuruDetay = ({ route }) => {
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{ flexGrow: 1, paddingHorizontal: 20 }}
     >
-      <Text style={styles.title}>{route.params.duyuru.title}</Text>
-      <Text style={styles.details}>{route.params.duyuru.details}</Text>
+      <RenderHtml source={source} contentWidth={width} />
       <View style={{ marginVertical: 30 }}>
         <Image
           style={styles.image}
@@ -31,20 +44,18 @@ const DuyuruDetay = ({ route }) => {
           }}
         />
       </View>
+      <View style={styles.textContainer}>
+        <Text style={styles.text}>Saygılarımızla,</Text>
+        <Text style={styles.text}>Aydın Ticaret Borsası</Text>
+        <Text style={styles.text}>{route.params.duyuru.createdDate}</Text>
+      </View>
       <View style={styles.buttonWrapper}>
         <Button
           title="Detaylı bilgi için Tıklayınız"
           onPress={() =>
-            WebBrowser.openBrowserAsync(
-              "https://www.aydinticaretborsasi.org.tr/"
-            )
+            WebBrowser.openBrowserAsync(`${route.params.duyuru.link}`)
           }
         />
-      </View>
-      <View style={styles.textContainer}>
-        <Text style={styles.text}>Saygılarımızla,</Text>
-        <Text style={styles.text}>Aydın Ticaret Borsası</Text>
-        <Text style={styles.text}>{route.params.duyuru.date}</Text>
       </View>
     </ScrollView>
   );

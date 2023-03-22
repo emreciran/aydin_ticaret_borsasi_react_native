@@ -8,15 +8,14 @@ const Duyurular = () => {
   const [datas, setDatas] = useState();
 
   const getDuyuruData = async () => {
-    const res = await axios.get("/announcements");
+    const res = await axios.get("/announcements?page=1&limit=10");
     setDatas(res.data);
   };
 
   useEffect(() => {
     getDuyuruData();
   }, []);
-  
-console.log(datas);
+
   return (
     <ImageBackground
       source={Logo}
@@ -24,7 +23,7 @@ console.log(datas);
       imageStyle={{ opacity: 0.5 }}
       style={{ flex: 1 }}
     >
-      <DuyuruList data={datas} />
+      <DuyuruList data={datas?.announcements} />
     </ImageBackground>
   );
 };
