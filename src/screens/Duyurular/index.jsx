@@ -3,13 +3,29 @@ import React, { useEffect, useState } from "react";
 import DuyuruList from "./components/DuyuruList";
 import Logo from "../../../assets/logo-atb.png";
 import axios from "../../axios";
+import AnnouncementService from "../../services/announcementService";
 
 const Duyurular = () => {
   const [datas, setDatas] = useState();
 
   const getDuyuruData = async () => {
-    const res = await axios.get("/announcements?page=1&limit=10");
-    setDatas(res.data);
+    // await axios
+    //   .get("/announcements?page=1&limit=10")
+    //   .then((response) => {
+    //     setDatas(res.data);
+    //     console.log(res.data);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+
+    AnnouncementService.getAnnouncements()
+      .then((response) => {
+        setDatas(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   useEffect(() => {

@@ -4,18 +4,24 @@ import SlideItem from "./SlideItem";
 import Pagination from "./Pagination";
 import axios from "../../../axios";
 import { useEffect } from "react";
+import NewsService from "../../../services/newsService";
 
 const Slider = () => {
   const [datas, setDatas] = useState();
 
   const getData = async () => {
-    const res = await axios.get("/news?page=1&limit=10");
-    setDatas(res.data);
+    NewsService.getNews()
+      .then((response) => {
+        setDatas(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   useEffect(() => {
-    getData()
-  }, [])
+    getData();
+  }, []);
 
   const [index, setIndex] = useState(0);
   const scrollX = useRef(new Animated.Value(0)).current;
