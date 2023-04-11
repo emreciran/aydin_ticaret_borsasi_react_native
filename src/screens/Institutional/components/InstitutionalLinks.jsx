@@ -1,9 +1,9 @@
 import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import React from "react";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import styles from "../styles/KurumsalLinks";
+import styles from "../styles/InstitutionalLinks";
 
-const KurumsalLinks = () => {
+const InstitutionalLinks = () => {
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={{ padding: 12 }}>
       <TouchableOpacity style={styles.group}>
@@ -38,4 +38,4 @@ const KurumsalLinks = () => {
   );
 };
 
-export default KurumsalLinks;
+export default InstitutionalLinks;

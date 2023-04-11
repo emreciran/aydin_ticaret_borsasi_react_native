@@ -1,10 +1,10 @@
 import { View, Text, ImageBackground } from "react-native";
 import React from "react";
-import KurumsalLinks from "./components/KurumsalLinks";
+import InstitutionalLinks from "./components/InstitutionalLinks";
 import Logo from "../../../assets/logo-atb.png";
 import Logo2 from "../../../assets/logo.png";
 
-const Kurumsal = () => {
+const Institutional = () => {
   return (
     <ImageBackground
       source={Logo}
@@ -12,9 +12,9 @@ const Kurumsal = () => {
       resizeMode="contain"
       style={{ flex: 1 }}
     >
-      <KurumsalLinks />
+      <InstitutionalLinks />
     </ImageBackground>
   );
 };
 
-export default Kurumsal;
+export default Institutional;

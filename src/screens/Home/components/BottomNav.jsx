@@ -14,7 +14,7 @@ const BottomNav = () => {
       <View style={styles.group}>
         <TouchableOpacity
           style={styles.circle}
-          onPress={() => navigation.navigate("Kurumsal")}
+          onPress={() => navigation.navigate("Institutional")}
         >
           <MaterialIcons name="work-outline" size={28} color="#fff" />
         </TouchableOpacity>
@@ -23,14 +23,17 @@ const BottomNav = () => {
       <View style={styles.group}>
         <TouchableOpacity
           style={styles.circle}
-          onPress={() => navigation.navigate("Duyurular")}
+          onPress={() => navigation.navigate("Announcement")}
         >
           <Ionicons name="megaphone-outline" size={28} color="#fff" />
         </TouchableOpacity>
         <Text>Duyuru</Text>
       </View>
       <View style={styles.group}>
-        <TouchableOpacity style={styles.circle} onPress={() => navigation.navigate("Haberler")}>
+        <TouchableOpacity
+          style={styles.circle}
+          onPress={() => navigation.navigate("News")}
+        >
           <Ionicons name="earth-outline" size={28} color="#fff" />
         </TouchableOpacity>
         <Text>Haber</Text>

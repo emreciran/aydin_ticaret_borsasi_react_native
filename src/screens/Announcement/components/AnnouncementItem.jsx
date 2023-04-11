@@ -1,17 +1,17 @@
 import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import React from "react";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import styles from "../styles/DuyuruItem";
+import styles from "../styles/AnnouncementItem";
 import { useNavigation } from "@react-navigation/native";
 
-const DuyuruItem = ({ duyuru }) => {
+const AnnouncementItem = ({ duyuru }) => {
   const navigation = useNavigation();
 
   return (
     <TouchableOpacity
       style={[styles.group, { marginBottom: 20 }]}
       onPress={() => {
-        navigation.navigate("DuyuruDetay", {
+        navigation.navigate("AnnouncementDetails", {
           duyuru,
         });
       }}
@@ -34,4 +34,4 @@ const DuyuruItem = ({ duyuru }) => {
   );
 };
 
-export default DuyuruItem;
+export default AnnouncementItem;

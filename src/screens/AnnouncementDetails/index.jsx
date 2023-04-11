@@ -8,11 +8,11 @@ import {
 } from "react-native";
 import React, { useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
-import styles from "./styles/DuyuruDetay";
+import styles from "./styles/AnnouncementDetails";
 import * as WebBrowser from "expo-web-browser";
 import RenderHtml from "react-native-render-html";
 
-const DuyuruDetay = ({ route }) => {
+const AnnouncementDetails = ({ route }) => {
   const source = {
     html: route.params.duyuru.details,
   };
@@ -61,4 +61,4 @@ const DuyuruDetay = ({ route }) => {
   );
 };
 
-export default DuyuruDetay;
+export default AnnouncementDetails;

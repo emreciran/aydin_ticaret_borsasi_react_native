@@ -5,10 +5,10 @@ import Home from "../screens/Home";
 import { NavigationContainer } from "@react-navigation/native";
 import { Image, StyleSheet } from "react-native";
 import Logo from "../../assets/logo.png";
-import Kurumsal from "../screens/Kurumsal";
-import Duyurular from "../screens/Duyurular";
-import DuyuruDetay from "../screens/DuyuruDetay";
-import Haberler from "../screens/Haberler";
+import Institutional from "../screens/Institutional";
+import Announcement from "../screens/Announcement";
+import AnnouncementDetails from "../screens/AnnouncementDetails";
+import News from "../screens/News";
 
 const Stack = createNativeStackNavigator();
 
@@ -43,10 +43,31 @@ const Navigations = () => {
             ),
           }}
         />
-        <Stack.Screen name="Kurumsal" component={Kurumsal} />
-        <Stack.Screen name="Duyurular" component={Duyurular} />
-        <Stack.Screen name="DuyuruDetay" component={DuyuruDetay} />
-        <Stack.Screen name="Haberler" component={Haberler} />
+        <Stack.Screen
+          name="Institutional"
+          component={Institutional}
+          options={{
+            headerTitle: "Kurumsal",
+          }}
+        />
+        <Stack.Screen
+          name="Announcement"
+          component={Announcement}
+          options={{
+            headerTitle: "Duyurular",
+          }}
+        />
+        <Stack.Screen
+          name="AnnouncementDetails"
+          component={AnnouncementDetails}
+        />
+        <Stack.Screen
+          name="News"
+          component={News}
+          options={{
+            headerTitle: "Haberler",
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

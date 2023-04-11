@@ -1,9 +1,9 @@
 import { View, Text } from "react-native";
 import React from "react";
-import DuyuruItem from "./DuyuruItem";
+import AnnouncementItem from "./AnnouncementItem";
 import { ScrollView } from "react-native";
 
-const DuyuruList = ({ data }) => {
+const AnnouncementList = ({ data }) => {
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -11,10 +11,10 @@ const DuyuruList = ({ data }) => {
       style={{ padding: 12 }}
     >
       {data?.map((item, index) => (
-        <DuyuruItem duyuru={item} key={index} />
+        <AnnouncementItem duyuru={item} key={index} />
       ))}
     </ScrollView>
   );
 };
 
-export default DuyuruList;
+export default AnnouncementList;

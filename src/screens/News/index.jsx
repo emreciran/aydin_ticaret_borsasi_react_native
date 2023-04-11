@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 import React from "react";
 import Slider from "./components/Slider";
 
-const Haberler = () => {
+const News = () => {
   return (
     <View>
       <Slider />
@@ -10,4 +10,4 @@ const Haberler = () => {
   );
 };
 
-export default Haberler;
+export default News;

@@ -1,23 +1,13 @@
 import { ImageBackground } from "react-native";
 import React, { useEffect, useState } from "react";
-import DuyuruList from "./components/DuyuruList";
+import AnnouncementList from "./components/AnnouncementList";
 import Logo from "../../../assets/logo-atb.png";
-import axios from "../../axios";
 import AnnouncementService from "../../services/announcementService";
 
-const Duyurular = () => {
+const Announcement = () => {
   const [datas, setDatas] = useState();
 
-  const getDuyuruData = async () => {
-    // await axios
-    //   .get("/announcements?page=1&limit=10")
-    //   .then((response) => {
-    //     setDatas(res.data);
-    //     console.log(res.data);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+  const getAnnouncementData = async () => {
 
     AnnouncementService.getAnnouncements()
       .then((response) => {
@@ -29,7 +19,7 @@ const Duyurular = () => {
   };
 
   useEffect(() => {
-    getDuyuruData();
+    getAnnouncementData();
   }, []);
 
   return (
@@ -39,9 +29,9 @@ const Duyurular = () => {
       imageStyle={{ opacity: 0.5 }}
       style={{ flex: 1 }}
     >
-      <DuyuruList data={datas?.announcements} />
+      <AnnouncementList data={datas?.announcements} />
     </ImageBackground>
   );
 };
 
-export default Duyurular;
+export default Announcement;
