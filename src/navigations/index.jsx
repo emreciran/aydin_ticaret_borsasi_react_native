@@ -9,6 +9,11 @@ import Institutional from "../screens/Institutional";
 import Announcement from "../screens/Announcement";
 import AnnouncementDetails from "../screens/AnnouncementDetails";
 import News from "../screens/News";
+import Newsletters from "../screens/Newsletters";
+import DailyNewsletters from "../screens/Newsletters/components/DailyNewsletters";
+import WeeklyNewsletters from "../screens/Newsletters/components/WeeklyNewsletters";
+import MonthlyNewsletters from "../screens/Newsletters/components/MonthlyNewsletters";
+import EventCalendar from "../screens/EventCalendar";
 
 const Stack = createNativeStackNavigator();
 
@@ -66,6 +71,41 @@ const Navigations = () => {
           component={News}
           options={{
             headerTitle: "Haberler",
+          }}
+        />
+        <Stack.Screen
+          name="Newsletters"
+          component={Newsletters}
+          options={{
+            headerTitle: "Bültenler",
+          }}
+        />
+        <Stack.Screen
+          name="DailyNewsletters"
+          component={DailyNewsletters}
+          options={{
+            headerTitle: "Günlük Bültenler",
+          }}
+        />
+        <Stack.Screen
+          name="WeeklyNewsletters"
+          component={WeeklyNewsletters}
+          options={{
+            headerTitle: "Haftalık Bültenler",
+          }}
+        />
+        <Stack.Screen
+          name="MonthlyNewsletters"
+          component={MonthlyNewsletters}
+          options={{
+            headerTitle: "Aylık Bültenler",
+          }}
+        />
+        <Stack.Screen
+          name="EventCalendar"
+          component={EventCalendar}
+          options={{
+            headerTitle: "Etkinlik Takvimi",
           }}
         />
       </Stack.Navigator>

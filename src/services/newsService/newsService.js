@@ -1,5 +1,6 @@
 import axios from "../../axios";
 import FuseUtils from "../../utils/FuseUtils";
+import newsServiceConfig from "./newsServiceConfig";
 
 class NewsService extends FuseUtils.EventEmitter {
   init() {
@@ -31,7 +32,7 @@ class NewsService extends FuseUtils.EventEmitter {
   getNews = () => {
     return new Promise((resolve, reject) => {
       axios
-        .get("/news?page=1&limit=10")
+        .get(newsServiceConfig.getNews)
         .then((response) => {
           if (response.data) resolve(response.data);
         })

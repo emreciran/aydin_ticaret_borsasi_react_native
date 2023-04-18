@@ -39,7 +39,10 @@ const BottomNav = () => {
         <Text>Haber</Text>
       </View>
       <View style={styles.group}>
-        <TouchableOpacity style={styles.circle}>
+        <TouchableOpacity
+          style={styles.circle}
+          onPress={() => navigation.navigate("Newsletters")}
+        >
           <Ionicons name="newspaper-outline" size={28} color="#fff" />
         </TouchableOpacity>
         <Text>Bülten</Text>
@@ -58,7 +61,10 @@ const BottomNav = () => {
           <Text>Piyasa</Text>
         </View>
         <View style={styles.group}>
-          <TouchableOpacity style={styles.circle}>
+          <TouchableOpacity
+            style={styles.circle}
+            onPress={() => navigation.navigate("EventCalendar")}
+          >
             <Ionicons name="calendar-outline" size={28} color="#fff" />
           </TouchableOpacity>
           <Text>Etkinlik</Text>
