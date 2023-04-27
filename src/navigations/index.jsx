@@ -39,7 +39,6 @@ const Navigations = () => {
           name="Home"
           component={Home}
           options={{
-            headerBackTitle: "Geri",
             title: "Aydın Ticaret Borsası",
             headerTitle: (props) => (
               <View style={{ flex: 1, flexDirection: "row" }}>

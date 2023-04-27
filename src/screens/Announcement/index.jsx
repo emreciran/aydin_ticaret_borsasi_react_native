@@ -7,7 +7,7 @@ import AnnouncementService from "../../services/announcementService";
 const Announcement = () => {
   const [datas, setDatas] = useState();
 
-  const getAnnouncementData = async () => {
+  const getAnnouncementData = () => {
 
     AnnouncementService.getAnnouncements()
       .then((response) => {

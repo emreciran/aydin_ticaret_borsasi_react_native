@@ -9,7 +9,7 @@ import NewsService from "../../../services/newsService";
 const Slider = () => {
   const [datas, setDatas] = useState();
 
-  const getData = async () => {
+  const getData = () => {
     NewsService.getNews()
       .then((response) => {
         setDatas(response);
