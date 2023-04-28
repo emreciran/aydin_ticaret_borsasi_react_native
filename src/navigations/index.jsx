@@ -14,6 +14,7 @@ import DailyNewsletters from "../screens/Newsletters/components/DailyNewsletters
 import WeeklyNewsletters from "../screens/Newsletters/components/WeeklyNewsletters";
 import MonthlyNewsletters from "../screens/Newsletters/components/MonthlyNewsletters";
 import EventCalendar from "../screens/EventCalendar";
+import RequestSuggestion from "../screens/RequestSuggestion";
 
 const Stack = createNativeStackNavigator();
 
@@ -105,6 +106,13 @@ const Navigations = () => {
           component={EventCalendar}
           options={{
             headerTitle: "Etkinlik Takvimi",
+          }}
+        />
+        <Stack.Screen 
+          name="RequestSuggestion"
+          component={RequestSuggestion}
+          options={{
+            headerTitle: "Talep / Öneri"
           }}
         />
       </Stack.Navigator>

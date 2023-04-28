@@ -71,7 +71,10 @@ const BottomNav = () => {
           <Text>Takvimi</Text>
         </View>
         <View style={styles.group}>
-          <TouchableOpacity style={styles.circle}>
+          <TouchableOpacity
+            style={styles.circle}
+            onPress={() => navigation.navigate("RequestSuggestion")}
+          >
             <FontAwesome name="pencil-square" size={26} color="#fff" />
           </TouchableOpacity>
           <Text>Talep</Text>

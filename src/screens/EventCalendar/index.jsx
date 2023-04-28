@@ -1,7 +1,7 @@
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import React, { useState } from "react";
 import CheckBox from "react-native-check-box";
-import AgendaComponent from "../../components/AgendaComponent";
+import AgendaComponent from "./components/AgendaComponent";
 import EventService from "../../services/eventService";
 import { useEffect } from "react";
 import AllEvents from "./components/AllEvents";
@@ -13,7 +13,7 @@ const EventCalendar = () => {
   const getEvents = () => {
     EventService.getEvents()
       .then((response) => {
-        setEvents(response.events);
+        setEvents(response.events.reverse());
       })
       .catch((error) => {
         console.log(error);
@@ -28,6 +28,7 @@ const EventCalendar = () => {
     <View style={{ flex: 1 }}>
       <CheckBox
         isChecked={isChecked}
+        style={{ padding: 8 }}
         rightText={
           !isChecked
             ? "Tüm etkinlikleri görüntüle"

@@ -1,28 +1,14 @@
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Alert,
-  Modal,
-  Pressable,
-  StyleSheet,
-} from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import React, { useEffect, useState } from "react";
 import { Agenda, LocaleConfig } from "react-native-calendars";
 import moment from "moment";
-import { Avatar, Card } from "react-native-paper";
-import localeCalendarConfig from "../configs/localeCalendarConfig";
+import { Card } from "react-native-paper";
+import localeCalendarConfig from "../../../configs/localeCalendarConfig";
 import { addDays, format } from "date-fns";
-import EventService from "../services/eventService";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import RenderHTML from "react-native-render-html";
 import { useWindowDimensions } from "react-native";
-import ModalPopup from "./ModalPopup";
-
-const timeToString = (time) => {
-  const date = new Date(time);
-  return date.toISOString().split("T")[0];
-};
+import ModalPopup from "../../../components/ModalPopup/ModalPopup";
 
 LocaleConfig.locales["tr"] = localeCalendarConfig.tr;
 LocaleConfig.defaultLocale = "tr";
@@ -30,7 +16,6 @@ LocaleConfig.defaultLocale = "tr";
 const AgendaComponent = ({ events }) => {
   const [items, setItems] = useState({});
   const [selectedItem, setSelectedItem] = useState();
-console.log(selectedItem);
   const [modalVisible, setModalVisible] = useState(false);
   const today = moment().format("YYYY-MM-DD");
 
@@ -39,11 +24,10 @@ console.log(selectedItem);
   useEffect(() => {
     const getData = () => {
       const mappedData = events?.map((event, index) => {
-        const date = addDays(new Date(), index);
-console.log(date);
+        const date = event?.startDate;
         return {
           ...event,
-          date: format(date, "yyyy-MM-dd"),
+          date: date,
         };
       });
 
@@ -84,14 +68,14 @@ console.log(date);
               >
                 <Text style={{ color: "#fff" }}>{item.title}</Text>
                 <Text style={{ color: "#fff" }}>
-                  {item.status === true
-                    ? "Etkinlik durumu güncel"
-                    : "Etkinlik iptal edildi"}
+                  {item.status !== true ? "Etkinlik iptal edildi" : ""}
                 </Text>
               </View>
               <View style={{ marginTop: 4 }}>
                 <Text style={{ color: "#eee" }}>
-                  {item?.startDate - item?.endDate}
+                  {item?.startDate}
+                  {" - "}
+                  {item?.endDate}
                 </Text>
               </View>
             </Card.Content>
@@ -101,27 +85,39 @@ console.log(date);
     );
   };
 
+  const renderEmptyDate = () => {
+    return (
+      <View>
+        <Text style={{ padding: 10 }}>Herhangi bir etkinlik bulunmuyor.</Text>
+      </View>
+    );
+  };
+
   return (
     <>
       <Agenda
-        items={items !== undefined && items}
+        items={items}
         selected={today}
         renderItem={renderItem}
+        renderEmptyData={renderEmptyDate}
+        showOnlySelectedDayItems
       />
-      <ModalPopup visible={modalVisible} setModalVisible={setModalVisible}>
+      <ModalPopup
+        visible={modalVisible}
+        setModalVisible={setModalVisible}
+        title={selectedItem?.title}
+      >
         <View>
-
-            <View>
-              <Text style={{ fontSize: 20 }}>{selectedItem?.title}</Text>
-            </View>
-          </View>
-          <View>
-            <Text>{moment(selectedItem?.startDate).format("DD/MM/YYYY")} - {moment(selectedItem?.endDate).format("DD/MM/YYYY")}</Text>
-            <RenderHTML
-              source={{ html: selectedItem?.details }}
-              contentWidth={width}
-            />
-          </View>
+          <Text>
+            {selectedItem?.startDate}
+            {" - "}
+            {selectedItem?.endDate}
+          </Text>
+          <RenderHTML
+            source={{ html: selectedItem?.details }}
+            contentWidth={width}
+          />
+        </View>
       </ModalPopup>
     </>
   );
