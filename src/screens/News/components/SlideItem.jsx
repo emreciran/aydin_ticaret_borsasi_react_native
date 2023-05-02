@@ -10,7 +10,6 @@ import {
 } from "react-native";
 import React from "react";
 import RenderHtml from "react-native-render-html";
-import logo from "../../../../assets/logo.png";
 import { ScrollView } from "react-native";
 
 const { width, height } = Dimensions.get("screen");
@@ -30,8 +29,7 @@ const SlideItem = ({ item }) => {
     >
       <View style={styles.container}>
         <Animated.Image
-          source={`https://localhost:7203/Images/${item.imageName}`}
-          //source={logo}
+          source={`C:/inetpub/wwwroot/AydinTicaretBorsasi/Images/News/${item.imageName}`}
           resizeMode="contain"
           style={[
             styles.image,

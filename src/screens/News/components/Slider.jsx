@@ -2,7 +2,6 @@ import { Animated, FlatList, Text, View } from "react-native";
 import React, { useRef, useState } from "react";
 import SlideItem from "./SlideItem";
 import Pagination from "./Pagination";
-import axios from "../../../axios";
 import { useEffect } from "react";
 import NewsService from "../../../services/newsService";
 
