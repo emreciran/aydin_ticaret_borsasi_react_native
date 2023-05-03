@@ -3,13 +3,21 @@ import React, { useState } from "react";
 import RequestSuggestionForm from "./components/RequestSuggestionForm";
 import RequestSuggestionService from "../../services/requestSuggestionService";
 import useToast from "../../hooks/useToast";
+import moment from "moment";
 
 const RequestSuggestion = () => {
+  const createdDate = moment().format("L LT");
+
   const [values, setValues] = useState({
     nameSurname: "",
     phone: "",
     email: "",
     message: "",
+    createdDate,
+    status: false,
+    replyBy: "",
+    reply: "",
+    replyDate: "",
   });
 
   const [_showToast] = useToast();
@@ -23,7 +31,7 @@ const RequestSuggestion = () => {
         _showToast.showToast("Başarılı", "Talep gönderildi.", "success");
       })
       .catch((error) => {
-        _showToast.showToast("Hata", "Talep gönderilemedi!", "error");
+        _showToast.showToast("Hata!", "Talep gönderilemedi.", "error");
       })
       .finally(() => {
         setLoading(false);

@@ -1,6 +1,7 @@
 import { View } from "react-native";
 import React, { useState } from "react";
 import { TextInput, Button } from "react-native-paper";
+import PhoneInput from "react-native-phone-number-input";
 
 const RequestSuggestionForm = ({
   values,
@@ -22,20 +23,25 @@ const RequestSuggestionForm = ({
             })
           }
         />
-        <TextInput
-          mode="outlined"
-          placeholder="Telefon (İsteğe Bağlı)"
-          keyboardType="numeric"
-          activeOutlineColor="#2F58CD"
-          // render={(props) => (
-          //   <TextInputMask {...props} mask="+[00] [000] [000] [000]" />
-          // )}
-          onChangeText={(text) =>
+        <PhoneInput
+          // ref={phoneInput}
+          defaultCode="TR"
+          layout="first"
+          placeholder="Telefon"
+          textContainerStyle={{ backgroundColor: "#fff" }}
+          textInputStyle={{ backgroundColor: "#fff" }}
+          containerStyle={{
+            width: "100%",
+            borderColor: "#000",
+            borderWidth: 0.54,
+            borderRadius: 5,
+          }}
+          onChangeFormattedText={(text) => {
             setValues({
               ...values,
               phone: text,
-            })
-          }
+            });
+          }}
         />
         <TextInput
           mode="outlined"
