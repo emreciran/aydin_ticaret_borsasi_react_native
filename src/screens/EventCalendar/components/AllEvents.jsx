@@ -11,7 +11,7 @@ import {
 import React, { useState } from "react";
 import { Card } from "react-native-paper";
 import moment from "moment";
-import ModalPopup from "../../../components/ModalPopup/ModalPopup";
+import ModalPopup from "../../../components/ModalPopup";
 import RenderHTML from "react-native-render-html";
 import { useWindowDimensions } from "react-native";
 

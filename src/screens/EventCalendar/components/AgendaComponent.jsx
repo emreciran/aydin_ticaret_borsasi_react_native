@@ -8,7 +8,7 @@ import { addDays, format } from "date-fns";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import RenderHTML from "react-native-render-html";
 import { useWindowDimensions } from "react-native";
-import ModalPopup from "../../../components/ModalPopup/ModalPopup";
+import ModalPopup from "../../../components/ModalPopup";
 
 LocaleConfig.locales["tr"] = localeCalendarConfig.tr;
 LocaleConfig.defaultLocale = "tr";
