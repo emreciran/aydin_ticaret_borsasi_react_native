@@ -55,7 +55,10 @@ const BottomNav = () => {
       </View>
       <View style={{ flexDirection: "row", gap: 18 }}>
         <View style={styles.group}>
-          <TouchableOpacity style={styles.circle}>
+          <TouchableOpacity
+            style={styles.circle}
+            onPress={() => navigation.navigate("Market")}
+          >
             <FontAwesome name="exchange" size={28} color="#fff" />
           </TouchableOpacity>
           <Text>Piyasa</Text>

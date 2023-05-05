@@ -42,4 +42,5 @@ const localeCalendarConfig = {
   },
   en: {},
 };
+
 export default localeCalendarConfig;

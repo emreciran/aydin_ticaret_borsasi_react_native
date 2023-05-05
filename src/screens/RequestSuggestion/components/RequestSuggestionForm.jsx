@@ -1,13 +1,13 @@
 import { View } from "react-native";
 import React, { useState } from "react";
 import { TextInput, Button } from "react-native-paper";
-import PhoneInput from "react-native-phone-number-input";
 import { Formik } from "formik";
 import RequestSuggestionService from "../../../services/requestSuggestionService";
 import useToast from "../../../hooks/useToast";
 import { RequestSuggestionSchema } from "../../../validations";
 import ErrorMessage from "../../../components/ErrorMessage";
 import moment from "moment";
+import MaskInput from "react-native-mask-input";
 
 const RequestSuggestionForm = () => {
   const [loading, setLoading] = useState(false);
@@ -74,23 +74,24 @@ const RequestSuggestionForm = () => {
             {errors.nameSurname && touched.nameSurname && (
               <ErrorMessage error={errors.nameSurname} />
             )}
-            <PhoneInput
-              // ref={phoneInput}
-              defaultCode="TR"
-              layout="first"
-              placeholder="Telefon"
+            <TextInput
+              mode="outlined"
+              activeOutlineColor="#2F58CD"
+              keyboardType="number-pad"
               value={values.phone}
-              textContainerStyle={{ backgroundColor: "#fff" }}
-              textInputStyle={{ backgroundColor: "#fff" }}
-              containerStyle={{
-                width: "100%",
-                borderColor: "#000",
-                borderWidth: 0.54,
-                borderRadius: 5,
-              }}
+              onChangeText={handleChange("phone")}
               onBlur={handleBlur("phone")}
-              onChangeFormattedText={handleChange("phone")}
+              placeholder="Telefon (İsteğe bağlı)"
+              render={(props) => (
+                <MaskInput
+                  {...props}
+                  mask={['(', /\d/,/\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/]}
+                  value={values.phone}
+                  onChangeText={handleChange("phone")}
+                />
+              )}
             />
+
             {errors.phone && touched.phone && (
               <ErrorMessage error={errors.phone} />
             )}

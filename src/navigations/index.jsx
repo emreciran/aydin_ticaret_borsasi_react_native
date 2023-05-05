@@ -15,6 +15,8 @@ import WeeklyNewsletters from "../screens/Newsletters/components/WeeklyNewslette
 import MonthlyNewsletters from "../screens/Newsletters/components/MonthlyNewsletters";
 import EventCalendar from "../screens/EventCalendar";
 import RequestSuggestion from "../screens/RequestSuggestion";
+import Market from "../screens/Market";
+import MarketSubLinks from "../screens/Market/components/MarketSubLinks";
 
 const Stack = createNativeStackNavigator();
 
@@ -108,12 +110,23 @@ const Navigations = () => {
             headerTitle: "Etkinlik Takvimi",
           }}
         />
-        <Stack.Screen 
+        <Stack.Screen
           name="RequestSuggestion"
           component={RequestSuggestion}
           options={{
-            headerTitle: "Talep / Öneri"
+            headerTitle: "Talep / Öneri",
           }}
+        />
+        <Stack.Screen
+          name="Market"
+          component={Market}
+          options={{
+            headerTitle: "Piyasalar",
+          }}
+        />
+        <Stack.Screen 
+        name="MarketSubLinks"
+        component={MarketSubLinks}
         />
       </Stack.Navigator>
     </NavigationContainer>
