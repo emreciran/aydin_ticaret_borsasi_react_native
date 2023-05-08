@@ -17,6 +17,7 @@ import EventCalendar from "../screens/EventCalendar";
 import RequestSuggestion from "../screens/RequestSuggestion";
 import Market from "../screens/Market";
 import MarketSubLinks from "../screens/Market/components/MarketSubLinks";
+import Communication from "../screens/Communication";
 
 const Stack = createNativeStackNavigator();
 
@@ -124,9 +125,13 @@ const Navigations = () => {
             headerTitle: "Piyasalar",
           }}
         />
-        <Stack.Screen 
-        name="MarketSubLinks"
-        component={MarketSubLinks}
+        <Stack.Screen name="MarketSubLinks" component={MarketSubLinks} />
+        <Stack.Screen
+          name="Communication"
+          component={Communication}
+          options={{
+            headerTitle: "İletişim",
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
