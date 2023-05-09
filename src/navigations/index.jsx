@@ -18,6 +18,7 @@ import RequestSuggestion from "../screens/RequestSuggestion";
 import Market from "../screens/Market";
 import MarketSubLinks from "../screens/Market/components/MarketSubLinks";
 import Communication from "../screens/Communication";
+import Settings from "../screens/Settings";
 
 const Stack = createNativeStackNavigator();
 
@@ -131,6 +132,13 @@ const Navigations = () => {
           component={Communication}
           options={{
             headerTitle: "İletişim",
+          }}
+        />
+        <Stack.Screen
+          name="Settings"
+          component={Settings}
+          options={{
+            headerTitle: "Ayarlar",
           }}
         />
       </Stack.Navigator>

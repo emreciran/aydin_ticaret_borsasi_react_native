@@ -93,7 +93,10 @@ const BottomNav = () => {
           <Text>İletişim</Text>
         </View>
         <View style={styles.group}>
-          <TouchableOpacity style={styles.circle}>
+          <TouchableOpacity
+            style={styles.circle}
+            onPress={() => navigation.navigate("Settings")}
+          >
             <Ionicons name="settings-outline" size={28} color="#fff" />
           </TouchableOpacity>
           <Text>Ayarlar</Text>

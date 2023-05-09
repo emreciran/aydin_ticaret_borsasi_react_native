@@ -1,5 +1,5 @@
 import React from "react";
-import MapView from "react-native-maps";
+import MapView, { Marker } from "react-native-maps";
 import { StyleSheet, View } from "react-native";
 import { Dimensions } from "react-native";
 
@@ -11,10 +11,19 @@ const Maps = () => {
         initialRegion={{
           latitude: 37.840639351552554,
           longitude: 27.85437224778698,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
+          latitudeDelta: 0.01,
+          longitudeDelta: 0.01,
         }}
-      />
+      >
+        <Marker
+          coordinate={{
+            latitude: 37.840639351552554,
+            longitude: 27.85437224778698,
+          }}
+          pinColor="red"
+          title="Aydın Ticaret Borsası"
+        />
+      </MapView>
     </View>
   );
 };
