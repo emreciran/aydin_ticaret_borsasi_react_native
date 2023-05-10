@@ -1,13 +1,32 @@
 import { View, Text } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import settingsConfig from "../../../configs/settingsConfig";
 import styles from "../styles/SettingsItem";
 import { Switch } from "react-native-paper";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const SettingsItem = () => {
-  const [isSwitchOn, setIsSwitchOn] = useState(false);
+  const [value, setValue] = useState();
 
-  const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
+  const getData = async (key) => {
+    try {
+      const data = await AsyncStorage.getItem(key);
+      if (data !== null) {
+        console.log(data);
+        return data;
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const storeData = async (name, value) => {
+    try {
+      await AsyncStorage.setItem(name, JSON.stringify(value));
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <View>
@@ -25,8 +44,14 @@ const SettingsItem = () => {
               </View>
               <View style={{ alignSelf: "center" }}>
                 <Switch
-                  value={isSwitchOn}
-                  onValueChange={onToggleSwitch}
+                  value={getData("pamuk")
+                    .then((data) => data)
+                    .then((value) => {
+                      console.log(value);
+                    })}
+                  onValueChange={async () => {
+                    storeData("pamuk", false);
+                  }}
                   color="#0BDA51"
                 />
               </View>
@@ -50,8 +75,10 @@ const SettingsItem = () => {
               </View>
               <View style={{ alignSelf: "center" }}>
                 <Switch
-                  value={isSwitchOn}
-                  onValueChange={onToggleSwitch}
+                  value={getData("ceksiz_kuru_uzum")}
+                  onValueChange={() => {
+                    storeData("ceksiz_kuru_uzum", "true");
+                  }}
                   color="#0BDA51"
                 />
               </View>
@@ -73,8 +100,10 @@ const SettingsItem = () => {
               </View>
               <View style={{ alignSelf: "center" }}>
                 <Switch
-                  value={isSwitchOn}
-                  onValueChange={onToggleSwitch}
+                  value={getData("tescil_bulten")}
+                  onValueChange={() => {
+                    storeData("tescil_bulten", "true");
+                  }}
                   color="#0BDA51"
                 />
               </View>
@@ -96,8 +125,10 @@ const SettingsItem = () => {
               </View>
               <View style={{ alignSelf: "center" }}>
                 <Switch
-                  value={isSwitchOn}
-                  onValueChange={onToggleSwitch}
+                  value={getData("aylik_finans_emtia")}
+                  onValueChange={() => {
+                    storeData("aylik_finans_emtia", "true");
+                  }}
                   color="#0BDA51"
                 />
               </View>
@@ -119,8 +150,10 @@ const SettingsItem = () => {
               </View>
               <View style={{ alignSelf: "center" }}>
                 <Switch
-                  value={isSwitchOn}
-                  onValueChange={onToggleSwitch}
+                  value={getData("duyuru")}
+                  onValueChange={() => {
+                    storeData("duyuru", "true");
+                  }}
                   color="#0BDA51"
                 />
               </View>
@@ -142,8 +175,10 @@ const SettingsItem = () => {
               </View>
               <View style={{ alignSelf: "center" }}>
                 <Switch
-                  value={isSwitchOn}
-                  onValueChange={onToggleSwitch}
+                  value={getData("haber")}
+                  onValueChange={() => {
+                    storeData("haber", "true");
+                  }}
                   color="#0BDA51"
                 />
               </View>
@@ -165,8 +200,10 @@ const SettingsItem = () => {
               </View>
               <View style={{ alignSelf: "center" }}>
                 <Switch
-                  value={isSwitchOn}
-                  onValueChange={onToggleSwitch}
+                  value={getData("etkinlik_takvimi")}
+                  onValueChange={() => {
+                    storeData("etkinlik_takvimi", "true");
+                  }}
                   color="#0BDA51"
                 />
               </View>
@@ -188,8 +225,10 @@ const SettingsItem = () => {
               </View>
               <View style={{ alignSelf: "center" }}>
                 <Switch
-                  value={isSwitchOn}
-                  onValueChange={onToggleSwitch}
+                  value={getData("dergi")}
+                  onValueChange={() => {
+                    storeData("dergi", "true");
+                  }}
                   color="#0BDA51"
                 />
               </View>
