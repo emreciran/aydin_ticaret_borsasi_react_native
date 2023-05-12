@@ -40,7 +40,7 @@ const AnnouncementDetails = ({ route }) => {
         <Image
           style={styles.image}
           source={{
-            uri: `https://localhost:7100/Images/${route.params.duyuru.imageName}`,
+            uri: `https://229c-212-253-124-232.ngrok-free.app/Images/Announcements/${route.params.duyuru.imageName}`,
           }}
         />
       </View>

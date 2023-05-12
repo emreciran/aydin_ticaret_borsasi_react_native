@@ -5,20 +5,26 @@ import styles from "../styles/SettingsItem";
 import { Switch } from "react-native-paper";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const SettingsItem = () => {
-  const [value, setValue] = useState();
-
-  const getData = async (key) => {
-    try {
-      const data = await AsyncStorage.getItem(key);
-      if (data !== null) {
-        console.log(data);
-        return data;
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+const SettingsItem = ({ settings, setSettings }) => {
+  const [pamuk, setPamuk] = useState(false);
+  const [ceksiz_kuru_uzum, setCeksiz_kuru_uzum] = useState(false);
+  const [tescil_bulten, setTescil_bulten] = useState(false);
+  const [aylik_finans_emtia, setAylik_finans_emtia] = useState(false);
+  const [duyuru, setDuyuru] = useState(false);
+  const [haber, setHaber] = useState(false);
+  const [etkinlik_takvimi, setEtkinlik_takvimi] = useState(false);
+  const [dergi, setDergi] = useState(false);
+console.log(settings);
+  // const getData = async (key) => {
+  //   try {
+  //     const data = await AsyncStorage.getItem(key);
+  //     if (data !== null) {
+  //       return data;
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   const storeData = async (name, value) => {
     try {
@@ -44,13 +50,13 @@ const SettingsItem = () => {
               </View>
               <View style={{ alignSelf: "center" }}>
                 <Switch
-                  value={getData("pamuk")
-                    .then((data) => data)
-                    .then((value) => {
-                      console.log(value);
-                    })}
+                  value={settings.pamuk.status}
                   onValueChange={async () => {
-                    storeData("pamuk", false);
+                    setSettings({
+                      ...settings,
+                      pamuk: { status: !settings.pamuk.status },
+                    });
+                    storeData("pamuk", settings.pamuk);
                   }}
                   color="#0BDA51"
                 />
@@ -75,9 +81,15 @@ const SettingsItem = () => {
               </View>
               <View style={{ alignSelf: "center" }}>
                 <Switch
-                  value={getData("ceksiz_kuru_uzum")}
-                  onValueChange={() => {
-                    storeData("ceksiz_kuru_uzum", "true");
+                  value={settings.ceksiz_kuru_uzum.status}
+                  onValueChange={async () => {
+                    setSettings({
+                      ...settings,
+                      ceksiz_kuru_uzum: {
+                        status: !settings.ceksiz_kuru_uzum.status,
+                      },
+                    });
+                    storeData("ceksiz_kuru_uzum", settings.ceksiz_kuru_uzum);
                   }}
                   color="#0BDA51"
                 />
@@ -100,9 +112,13 @@ const SettingsItem = () => {
               </View>
               <View style={{ alignSelf: "center" }}>
                 <Switch
-                  value={getData("tescil_bulten")}
+                  value={settings.tescil_bulten.status}
                   onValueChange={() => {
-                    storeData("tescil_bulten", "true");
+                    setSettings({
+                      ...settings,
+                      tescil_bulten: { status: !settings.tescil_bulten.status },
+                    });
+                    storeData("tescil_bulten", settings.tescil_bulten);
                   }}
                   color="#0BDA51"
                 />
@@ -125,9 +141,18 @@ const SettingsItem = () => {
               </View>
               <View style={{ alignSelf: "center" }}>
                 <Switch
-                  value={getData("aylik_finans_emtia")}
+                  value={settings.aylik_finans_emtia.status}
                   onValueChange={() => {
-                    storeData("aylik_finans_emtia", "true");
+                    setSettings({
+                      ...settings,
+                      aylik_finans_emtia: {
+                        status: !settings.aylik_finans_emtia.status,
+                      },
+                    });
+                    storeData(
+                      "aylik_finans_emtia",
+                      settings.aylik_finans_emtia
+                    );
                   }}
                   color="#0BDA51"
                 />
@@ -150,9 +175,13 @@ const SettingsItem = () => {
               </View>
               <View style={{ alignSelf: "center" }}>
                 <Switch
-                  value={getData("duyuru")}
+                  value={settings.duyuru.status}
                   onValueChange={() => {
-                    storeData("duyuru", "true");
+                    setSettings({
+                      ...settings,
+                      duyuru: { status: !settings.duyuru.status },
+                    });
+                    storeData("duyuru", settings.duyuru);
                   }}
                   color="#0BDA51"
                 />
@@ -175,9 +204,13 @@ const SettingsItem = () => {
               </View>
               <View style={{ alignSelf: "center" }}>
                 <Switch
-                  value={getData("haber")}
+                  value={settings.haber.status}
                   onValueChange={() => {
-                    storeData("haber", "true");
+                    setSettings({
+                      ...settings,
+                      haber: { status: !settings.haber.status },
+                    });
+                    storeData("haber", settings.haber);
                   }}
                   color="#0BDA51"
                 />
@@ -200,9 +233,15 @@ const SettingsItem = () => {
               </View>
               <View style={{ alignSelf: "center" }}>
                 <Switch
-                  value={getData("etkinlik_takvimi")}
+                  value={settings.etkinlik_takvimi.status}
                   onValueChange={() => {
-                    storeData("etkinlik_takvimi", "true");
+                    setSettings({
+                      ...settings,
+                      etkinlik_takvimi: {
+                        status: !settings.etkinlik_takvimi.status,
+                      },
+                    });
+                    storeData("etkinlik_takvimi", settings.etkinlik_takvimi);
                   }}
                   color="#0BDA51"
                 />
@@ -225,9 +264,13 @@ const SettingsItem = () => {
               </View>
               <View style={{ alignSelf: "center" }}>
                 <Switch
-                  value={getData("dergi")}
+                  value={settings.dergi.status}
                   onValueChange={() => {
-                    storeData("dergi", "true");
+                    setSettings({
+                      ...settings,
+                      dergi: { status: !settings.dergi.status },
+                    });
+                    storeData("dergi", settings.dergi);
                   }}
                   color="#0BDA51"
                 />
