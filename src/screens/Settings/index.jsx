@@ -1,39 +1,40 @@
 import { View, ScrollView, Text } from "react-native";
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import SettingsItem from "./components/SettingsItem";
 import styles from "./styles/SettingsItem";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Settings = () => {
-  const [settings, setSettings] = useState({
-    pamuk: {
-      status: async () => {
-        const a = await AsyncStorage.getItem("pamuk")
-        return a != null ? JSON.parse(a) : false
-      },
-    },
-    ceksiz_kuru_uzum: {
-      status: undefined,
-    },
-    tescil_bulten: {
-      status: false,
-    },
-    aylik_finans_emtia: {
-      status: false,
-    },
-    duyuru: {
-      status: false,
-    },
-    haber: {
-      status: false,
-    },
-    etkinlik_takvimi: {
-      status: false,
-    },
-    dergi: {
-      status: false,
-    },
-  });
+  // const [settings, setSettings] = useState({
+  //   pamuk: {
+  //     status: async () => {
+  //       const a = await AsyncStorage.getItem("pamuk");
+  //       return a !== null ? JSON.parse(a) : false;
+  //     },
+  //   },
+  //   ceksiz_kuru_uzum: {
+  //     status: async () => {
+  //       const a = await AsyncStorage.getItem("ceksiz_kuru_uzum");
+  //       return a !== null ? JSON.parse(a) : false;
+  //     },
+  //   },
+  //   tescil_bulten: {
+  //     status: false,
+  //   },
+  //   aylik_finans_emtia: {
+  //     status: false,
+  //   },
+  //   duyuru: {
+  //     status: false,
+  //   },
+  //   haber: {
+  //     status: false,
+  //   },
+  //   etkinlik_takvimi: {
+  //     status: false,
+  //   },
+  //   dergi: false,
+  // });
 
   const getValues = async (name) => {
     const jsonValue = await AsyncStorage.getItem(name);
@@ -43,7 +44,7 @@ const Settings = () => {
 
   useEffect(() => {
     getValues("pamuk");
-    getValues("ceksiz_kuru_uzum")
+    getValues("ceksiz_kuru_uzum");
   }, []);
 
   return (
@@ -53,7 +54,7 @@ const Settings = () => {
           Bildirilmesini istediğiniz konuları seçiniz.
         </Text>
       </View>
-      <SettingsItem settings={settings} setSettings={setSettings} />
+      <SettingsItem  />
     </ScrollView>
   );
 };

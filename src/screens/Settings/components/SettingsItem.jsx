@@ -4,17 +4,14 @@ import settingsConfig from "../../../configs/settingsConfig";
 import styles from "../styles/SettingsItem";
 import { Switch } from "react-native-paper";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useDispatch } from "react-redux";
+import { setSettings } from "../../../store/slices/settingsSlice";
+import { useSelector } from "react-redux";
 
-const SettingsItem = ({ settings, setSettings }) => {
-  const [pamuk, setPamuk] = useState(false);
-  const [ceksiz_kuru_uzum, setCeksiz_kuru_uzum] = useState(false);
-  const [tescil_bulten, setTescil_bulten] = useState(false);
-  const [aylik_finans_emtia, setAylik_finans_emtia] = useState(false);
-  const [duyuru, setDuyuru] = useState(false);
-  const [haber, setHaber] = useState(false);
-  const [etkinlik_takvimi, setEtkinlik_takvimi] = useState(false);
-  const [dergi, setDergi] = useState(false);
-console.log(settings);
+const SettingsItem = () => {
+  const dispatch = useDispatch();
+  const { settings } = useSelector((state) => state.settingsSlice);
+  console.log(settings);
   // const getData = async (key) => {
   //   try {
   //     const data = await AsyncStorage.getItem(key);
@@ -24,6 +21,10 @@ console.log(settings);
   //   } catch (error) {
   //     console.log(error);
   //   }
+  // };
+
+  // const handleChange = () => {
+  //   dispatch(setSettings);
   // };
 
   const storeData = async (name, value) => {
@@ -50,13 +51,11 @@ console.log(settings);
               </View>
               <View style={{ alignSelf: "center" }}>
                 <Switch
-                  value={settings.pamuk.status}
-                  onValueChange={async () => {
-                    setSettings({
-                      ...settings,
-                      pamuk: { status: !settings.pamuk.status },
-                    });
-                    storeData("pamuk", settings.pamuk);
+                  value={settings.pamuk}
+                  onValueChange={() => {
+                    dispatch(
+                      setSettings({ ...settings, pamuk: !settings.pamuk })
+                    );
                   }}
                   color="#0BDA51"
                 />
@@ -81,15 +80,14 @@ console.log(settings);
               </View>
               <View style={{ alignSelf: "center" }}>
                 <Switch
-                  value={settings.ceksiz_kuru_uzum.status}
+                  value={settings.ceksiz_kuru_uzum}
                   onValueChange={async () => {
-                    setSettings({
-                      ...settings,
-                      ceksiz_kuru_uzum: {
-                        status: !settings.ceksiz_kuru_uzum.status,
-                      },
-                    });
-                    storeData("ceksiz_kuru_uzum", settings.ceksiz_kuru_uzum);
+                    dispatch(
+                      setSettings({
+                        ...settings,
+                        ceksiz_kuru_uzum: !settings.ceksiz_kuru_uzum,
+                      })
+                    );
                   }}
                   color="#0BDA51"
                 />
@@ -112,13 +110,14 @@ console.log(settings);
               </View>
               <View style={{ alignSelf: "center" }}>
                 <Switch
-                  value={settings.tescil_bulten.status}
+                  value={settings.tescil_bulten}
                   onValueChange={() => {
-                    setSettings({
-                      ...settings,
-                      tescil_bulten: { status: !settings.tescil_bulten.status },
-                    });
-                    storeData("tescil_bulten", settings.tescil_bulten);
+                    dispatch(
+                      setSettings({
+                        ...settings,
+                        tescil_bulten: !settings.tescil_bulten,
+                      })
+                    );
                   }}
                   color="#0BDA51"
                 />
@@ -141,17 +140,13 @@ console.log(settings);
               </View>
               <View style={{ alignSelf: "center" }}>
                 <Switch
-                  value={settings.aylik_finans_emtia.status}
+                  value={settings.aylik_finans_emtia}
                   onValueChange={() => {
-                    setSettings({
-                      ...settings,
-                      aylik_finans_emtia: {
-                        status: !settings.aylik_finans_emtia.status,
-                      },
-                    });
-                    storeData(
-                      "aylik_finans_emtia",
-                      settings.aylik_finans_emtia
+                    dispatch(
+                      setSettings({
+                        ...settings,
+                        aylik_finans_emtia: !settings.aylik_finans_emtia,
+                      })
                     );
                   }}
                   color="#0BDA51"
@@ -175,13 +170,11 @@ console.log(settings);
               </View>
               <View style={{ alignSelf: "center" }}>
                 <Switch
-                  value={settings.duyuru.status}
+                  value={settings.duyuru}
                   onValueChange={() => {
-                    setSettings({
-                      ...settings,
-                      duyuru: { status: !settings.duyuru.status },
-                    });
-                    storeData("duyuru", settings.duyuru);
+                    dispatch(
+                      setSettings({ ...settings, duyuru: !settings.duyuru })
+                    );
                   }}
                   color="#0BDA51"
                 />
@@ -204,13 +197,11 @@ console.log(settings);
               </View>
               <View style={{ alignSelf: "center" }}>
                 <Switch
-                  value={settings.haber.status}
+                  value={settings.haber}
                   onValueChange={() => {
-                    setSettings({
-                      ...settings,
-                      haber: { status: !settings.haber.status },
-                    });
-                    storeData("haber", settings.haber);
+                    dispatch(
+                      setSettings({ ...settings, haber: !settings.haber })
+                    );
                   }}
                   color="#0BDA51"
                 />
@@ -233,15 +224,14 @@ console.log(settings);
               </View>
               <View style={{ alignSelf: "center" }}>
                 <Switch
-                  value={settings.etkinlik_takvimi.status}
+                  value={settings.etkinlik_takvimi}
                   onValueChange={() => {
-                    setSettings({
-                      ...settings,
-                      etkinlik_takvimi: {
-                        status: !settings.etkinlik_takvimi.status,
-                      },
-                    });
-                    storeData("etkinlik_takvimi", settings.etkinlik_takvimi);
+                    dispatch(
+                      setSettings({
+                        ...settings,
+                        etkinlik_takvimi: !settings.etkinlik_takvimi,
+                      })
+                    );
                   }}
                   color="#0BDA51"
                 />
@@ -264,13 +254,11 @@ console.log(settings);
               </View>
               <View style={{ alignSelf: "center" }}>
                 <Switch
-                  value={settings.dergi.status}
+                  value={settings.dergi}
                   onValueChange={() => {
-                    setSettings({
-                      ...settings,
-                      dergi: { status: !settings.dergi.status },
-                    });
-                    storeData("dergi", settings.dergi);
+                    dispatch(
+                      setSettings({ ...settings, dergi: !settings.dergi })
+                    );
                   }}
                   color="#0BDA51"
                 />
