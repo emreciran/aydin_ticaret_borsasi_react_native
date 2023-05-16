@@ -8,9 +8,11 @@ import {
   Easing,
   useWindowDimensions,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import RenderHtml from "react-native-render-html";
 import { ScrollView } from "react-native";
+import { useEffect } from "react";
+import axios from "axios";
 
 const { width, height } = Dimensions.get("screen");
 
@@ -18,6 +20,18 @@ const SlideItem = ({ item }) => {
   const source = {
     html: item?.details,
   };
+  const [image, setImage] = useState("");
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://d5d3-212-253-124-232.ngrok-free.app/News/${item?.imageName}`
+      )
+      .then((res) => {
+        console.log(res.data);
+        setImage(res.data);
+      });
+  }, []);
 
   const { width } = useWindowDimensions();
   const translateYImage = new Animated.Value(40);
@@ -29,7 +43,7 @@ const SlideItem = ({ item }) => {
     >
       <View style={styles.container}>
         <Animated.Image
-          source={`C:/inetpub/wwwroot/AydinTicaretBorsasi/Images/News/${item.imageName}`}
+          source={image}
           resizeMode="contain"
           style={[
             styles.image,

@@ -6,16 +6,19 @@ import {
   Image,
   useWindowDimensions,
 } from "react-native";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import styles from "./styles/AnnouncementDetails";
 import * as WebBrowser from "expo-web-browser";
 import RenderHtml from "react-native-render-html";
+import axios from "axios";
 
 const AnnouncementDetails = ({ route }) => {
   const source = {
     html: route.params.duyuru.details,
   };
+
+  const [image, setImage] = useState("");
 
   const { width } = useWindowDimensions();
 
@@ -28,6 +31,15 @@ const AnnouncementDetails = ({ route }) => {
           ? route.params.duyuru.title.slice(0, 15) + "..."
           : route.params.duyuru.title,
     });
+
+    axios
+      .get(
+        `https://d5d3-212-253-124-232.ngrok-free.app/Announcements/${route.params.duyuru.imageName}`
+      )
+      .then((res) => {
+        console.log(res.data);
+        setImage(res.data);
+      });
   }, []);
 
   return (
@@ -37,12 +49,14 @@ const AnnouncementDetails = ({ route }) => {
     >
       <RenderHtml source={source} contentWidth={width} />
       <View style={{ marginVertical: 30 }}>
-        <Image
-          style={styles.image}
-          source={{
-            uri: `https://229c-212-253-124-232.ngrok-free.app/Images/Announcements/${route.params.duyuru.imageName}`,
-          }}
-        />
+        {image && (
+          <Image
+            style={styles.image}
+            source={{
+              uri: image,
+            }}
+          />
+        )}
       </View>
       <View style={styles.textContainer}>
         <Text style={styles.text}>Saygılarımızla,</Text>

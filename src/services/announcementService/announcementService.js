@@ -37,7 +37,7 @@ class AnnouncementService extends FuseUtils.EventEmitter {
           if (response.data) resolve(response.data);
         })
         .catch((error) => {
-          reject(error ? error.message : "Error!");
+          reject(error ? error : "Error!");
         });
     });
   };
