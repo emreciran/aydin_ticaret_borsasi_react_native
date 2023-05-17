@@ -1,4 +1,4 @@
-import { Animated, FlatList, Text, View } from "react-native";
+import { Animated, FlatList, ScrollView, View } from "react-native";
 import React, { useRef, useState } from "react";
 import SlideItem from "./SlideItem";
 import Pagination from "./Pagination";

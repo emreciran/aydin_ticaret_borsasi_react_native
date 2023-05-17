@@ -5,7 +5,7 @@ import styles from "../styles/SettingsItem";
 import { Switch } from "react-native-paper";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useDispatch } from "react-redux";
-import {  setSettings } from "../../../store/slices/settingsSlice";
+import { setSettings } from "../../../store/slices/settingsSlice";
 import { useSelector } from "react-redux";
 
 const SettingsItem = () => {

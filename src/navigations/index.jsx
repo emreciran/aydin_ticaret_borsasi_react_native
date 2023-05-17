@@ -19,6 +19,7 @@ import Market from "../screens/Market";
 import MarketSubLinks from "../screens/Market/components/MarketSubLinks";
 import Communication from "../screens/Communication";
 import Settings from "../screens/Settings";
+import TescilBulletin from "../screens/TescilBulletin";
 
 const Stack = createNativeStackNavigator();
 
@@ -104,6 +105,10 @@ const Navigations = () => {
           options={{
             headerTitle: "Aylık Bültenler",
           }}
+        />
+        <Stack.Screen 
+          name="TescilBulletin"
+          component={TescilBulletin}
         />
         <Stack.Screen
           name="EventCalendar"

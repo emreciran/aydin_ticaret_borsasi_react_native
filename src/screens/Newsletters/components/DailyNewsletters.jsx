@@ -22,7 +22,14 @@ const DailyNewsletters = () => {
       style={{ flex: 1 }}
     >
       <ScrollView showsVerticalScrollIndicator={false} style={{ padding: 12 }}>
-        <TouchableOpacity style={styles.group}>
+        <TouchableOpacity
+          style={styles.group}
+          onPress={() =>
+            navigation.navigate("TescilBulletin", {
+              type: "Daily",
+            })
+          }
+        >
           <Text style={styles.text}>Tescil Bülteni</Text>
           <FontAwesome name="angle-right" size={36} color="#3A98B9" />
         </TouchableOpacity>

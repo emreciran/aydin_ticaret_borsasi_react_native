@@ -34,7 +34,7 @@ const AnnouncementDetails = ({ route }) => {
 
     axios
       .get(
-        `https://d5d3-212-253-124-232.ngrok-free.app/Announcements/${route.params.duyuru.imageName}`
+        `https://9520-212-253-124-232.ngrok-free.app/Images/Announcements/${route.params.duyuru.imageName}`
       )
       .then((res) => {
         console.log(res.data);

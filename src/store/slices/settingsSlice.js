@@ -14,13 +14,13 @@ const initialState = {
   },
 };
 
-// export const fetchSettings = createAsyncThunk("fetchSettings", async (key) => {
-//   await AsyncStorage.getItem(key)
-//     .then((data) => data)
-//     .then((value) => {
-//       return JSON.parse(value);
-//     });
-// });
+export const fetchSettings = createAsyncThunk("fetchSettings", async (key) => {
+  await AsyncStorage.getItem(key)
+    .then((data) => data)
+    .then((value) => {
+      return JSON.parse(value);
+    });
+});
 
 const settings = createSlice({
   name: "settings",
@@ -32,11 +32,11 @@ const settings = createSlice({
       }
     },
   },
-  // extraReducers: (builder) => {
-  //   builder.addCase(fetchSettings.fulfilled, (state, action) => {
-  //     state.settings = action.payload;
-  //   });
-  // },
+  extraReducers: (builder) => {
+    builder.addCase(fetchSettings.fulfilled, (state, action) => {
+      state.settings = action.payload;
+    });
+  },
 });
 
 export default settings.reducer;

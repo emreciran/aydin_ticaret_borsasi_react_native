@@ -13,6 +13,7 @@ import RenderHtml from "react-native-render-html";
 import { ScrollView } from "react-native";
 import { useEffect } from "react";
 import axios from "axios";
+import logo from "../../../../assets/logo.jpg";
 
 const { width, height } = Dimensions.get("screen");
 
@@ -25,10 +26,9 @@ const SlideItem = ({ item }) => {
   useEffect(() => {
     axios
       .get(
-        `https://d5d3-212-253-124-232.ngrok-free.app/News/${item?.imageName}`
+        `https://9520-212-253-124-232.ngrok-free.app/Images/News/${item?.imageName}`
       )
       .then((res) => {
-        console.log(res.data);
         setImage(res.data);
       });
   }, []);
@@ -37,33 +37,38 @@ const SlideItem = ({ item }) => {
   const translateYImage = new Animated.Value(40);
 
   return (
-    <ScrollView
-      showsVerticalScrollIndicator={false}
-      contentContainerStyle={{ flexGrow: 1 }}
-    >
-      <View style={styles.container}>
-        <Animated.Image
-          source={image}
-          resizeMode="contain"
-          style={[
-            styles.image,
-            {
-              transform: [
-                {
-                  translateY: translateYImage,
-                },
-              ],
-            },
-          ]}
-        />
-
-        <View style={styles.content}>
-          <Text style={styles.title}>{item.title}</Text>
-          <RenderHtml source={source} contentWidth={width} />
-          <Text style={styles.date}>{item.createdDate}</Text>
+    <View style={{ flex: 1 }}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ flexGrow: 1 }}
+      >
+        <View style={styles.container}>
+          <Animated.Image
+            source={logo}
+            resizeMode="contain"
+            style={[
+              styles.image,
+              {
+                transform: [
+                  {
+                    translateY: translateYImage,
+                  },
+                ],
+              },
+            ]}
+          />
+          <View style={styles.content}>
+            <Text style={styles.title}>{item.title}</Text>
+            <RenderHtml
+              source={source}
+              contentWidth={width}
+              baseStyle={styles.description}
+            />
+            <Text style={styles.date}>{item.createdDate}</Text>
+          </View>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </View>
   );
 };
 
@@ -72,30 +77,32 @@ export default SlideItem;
 const styles = StyleSheet.create({
   container: {
     width,
-    height,
     alignItems: "center",
+    padding: 10,
+    backgroundColor: "#fff"
   },
   image: {
     flex: 0.5,
-    marginBottom: 25,
     width: "100%",
+    borderRadius: 10,
+    marginBottom: 45,
   },
   content: {
     flex: 0.4,
     alignItems: "center",
   },
   title: {
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: "bold",
     color: "#333",
   },
   description: {
     fontSize: 18,
-    marginVertical: 12,
     color: "#333",
   },
   date: {
     fontSize: 18,
     fontWeight: "bold",
+    alignSelf: "flex-start",
   },
 });
