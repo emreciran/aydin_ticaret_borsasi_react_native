@@ -24,7 +24,11 @@ const WeeklyNewsletters = () => {
       <ScrollView showsVerticalScrollIndicator={false} style={{ padding: 12 }}>
         <TouchableOpacity
           style={styles.group}
-          onPress={() => navigation.navigate("TescilBulletin")}
+          onPress={() =>
+            navigation.navigate("TescilBulletin", {
+              type: "Weekly",
+            })
+          }
         >
           <Text style={styles.text}>Tescil Bülteni</Text>
           <FontAwesome name="angle-right" size={36} color="#3A98B9" />
