@@ -6,19 +6,19 @@ import {
   Image,
   useWindowDimensions,
 } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import styles from "./styles/AnnouncementDetails";
 import * as WebBrowser from "expo-web-browser";
 import RenderHtml from "react-native-render-html";
-import axios from "axios";
+import { REACT_APP_API_URL } from "@env";
 
 const AnnouncementDetails = ({ route }) => {
-  const source = {
-    html: route.params.duyuru.details,
-  };
+  const { duyuru } = route.params;
 
-  const [image, setImage] = useState("");
+  const source = {
+    html: duyuru.details,
+  };
 
   const { width } = useWindowDimensions();
 
@@ -27,19 +27,10 @@ const AnnouncementDetails = ({ route }) => {
   useEffect(() => {
     navigation.setOptions({
       title:
-        route.params.duyuru.title.length > 15
-          ? route.params.duyuru.title.slice(0, 15) + "..."
-          : route.params.duyuru.title,
+        duyuru.title.length > 15
+          ? duyuru.title.slice(0, 15) + "..."
+          : duyuru.title,
     });
-
-    axios
-      .get(
-        `https://9520-212-253-124-232.ngrok-free.app/Images/Announcements/${route.params.duyuru.imageName}`
-      )
-      .then((res) => {
-        console.log(res.data);
-        setImage(res.data);
-      });
   }, []);
 
   return (
@@ -47,29 +38,25 @@ const AnnouncementDetails = ({ route }) => {
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{ flexGrow: 1, paddingHorizontal: 20 }}
     >
-      <RenderHtml source={source} contentWidth={width} />
-      <View style={{ marginVertical: 30 }}>
-        {image && (
-          <Image
-            style={styles.image}
-            source={{
-              uri: image,
-            }}
-          />
-        )}
-      </View>
-      <View style={styles.textContainer}>
-        <Text style={styles.text}>Saygılarımızla,</Text>
-        <Text style={styles.text}>Aydın Ticaret Borsası</Text>
-        <Text style={styles.text}>{route.params.duyuru.createdDate}</Text>
-      </View>
-      <View style={styles.buttonWrapper}>
-        <Button
-          title="Detaylı bilgi için Tıklayınız"
-          onPress={() =>
-            WebBrowser.openBrowserAsync(`${route.params.duyuru.link}`)
-          }
+      <View style={{ paddingBottom: 25 }}>
+        <Image
+          style={{ width: "100%", height: 400, resizeMode: "contain" }}
+          source={{
+            uri: `${REACT_APP_API_URL}/Images/Announcements/${duyuru.imageName}`,
+          }}
         />
+        <RenderHtml source={source} contentWidth={width} />
+        <View style={styles.textContainer}>
+          <Text style={styles.text}>Saygılarımızla,</Text>
+          <Text style={styles.text}>Aydın Ticaret Borsası</Text>
+          <Text style={styles.text}>{duyuru.createdDate}</Text>
+        </View>
+        <View style={styles.buttonWrapper}>
+          <Button
+            title="Detaylı bilgi için Tıklayınız"
+            onPress={() => WebBrowser.openBrowserAsync(`${duyuru.link}`)}
+          />
+        </View>
       </View>
     </ScrollView>
   );

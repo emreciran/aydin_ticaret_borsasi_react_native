@@ -8,30 +8,17 @@ import {
   Easing,
   useWindowDimensions,
 } from "react-native";
-import React, { useState } from "react";
+import React from "react";
 import RenderHtml from "react-native-render-html";
 import { ScrollView } from "react-native";
-import { useEffect } from "react";
-import axios from "axios";
-import logo from "../../../../assets/logo.jpg";
+import { REACT_APP_API_URL } from "@env";
 
-const { width, height } = Dimensions.get("screen");
+const { width } = Dimensions.get("screen");
 
 const SlideItem = ({ item }) => {
   const source = {
     html: item?.details,
   };
-  const [image, setImage] = useState("");
-
-  useEffect(() => {
-    axios
-      .get(
-        `https://9520-212-253-124-232.ngrok-free.app/Images/News/${item?.imageName}`
-      )
-      .then((res) => {
-        setImage(res.data);
-      });
-  }, []);
 
   const { width } = useWindowDimensions();
   const translateYImage = new Animated.Value(40);
@@ -44,18 +31,19 @@ const SlideItem = ({ item }) => {
       >
         <View style={styles.container}>
           <Animated.Image
-            source={logo}
+            source={{
+              uri: `${REACT_APP_API_URL}/Images/News/${item.imageName}`,
+            }}
             resizeMode="contain"
-            style={[
-              styles.image,
-              {
-                transform: [
-                  {
-                    translateY: translateYImage,
-                  },
-                ],
-              },
-            ]}
+            style={{
+              width: "100%",
+              height: 400,
+              transform: [
+                {
+                  translateY: translateYImage,
+                },
+              ],
+            }}
           />
           <View style={styles.content}>
             <Text style={styles.title}>{item.title}</Text>
@@ -77,19 +65,15 @@ export default SlideItem;
 const styles = StyleSheet.create({
   container: {
     width,
+    height: "100%",
     alignItems: "center",
-    padding: 10,
-    backgroundColor: "#fff"
-  },
-  image: {
-    flex: 0.5,
-    width: "100%",
-    borderRadius: 10,
-    marginBottom: 45,
+    paddingHorizontal: 10,
+    backgroundColor: "#fff",
+    paddingBottom: 30,
   },
   content: {
-    flex: 0.4,
     alignItems: "center",
+    marginTop: 45,
   },
   title: {
     fontSize: 20,

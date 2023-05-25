@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
     fontWeight: "700",
   },
   details: {
-    textAlign: "justify",
     fontSize: 16,
     marginTop: 10,
   },

@@ -12,20 +12,23 @@ const TescilBulletinItemDesc = ({ subItem }) => {
         minWidth: "100%",
       }}
     >
-      <View style={{gap: 6}}>
-        <Text>
-          Satış Şekli: <Text>{subItem.satis_sekli}</Text>
+      <View style={{ gap: 6 }}>
+        <Text style={{ fontWeight: 700 }}>
+          Satış Şekli:{" "}
+          <Text style={{ fontWeight: 400 }}>{subItem.satis_sekli}</Text>
         </Text>
-        <Text>
-          İşlem Adedi: <Text>{subItem.islem_adet}</Text>
+        <Text style={{ fontWeight: 700 }}>
+          İşlem Adedi:{" "}
+          <Text style={{ fontWeight: 400 }}>{subItem.islem_adet}</Text>
         </Text>
       </View>
-      <View style={{gap: 5}}>
-        <Text>
-          Ortalama: <Text>{subItem.ortalama}</Text>
+      <View style={{ gap: 6, marginLeft: 10 }}>
+        <Text style={{ fontWeight: 700 }}>
+          Ortalama: <Text style={{ fontWeight: 400 }}>{subItem.ortalama}</Text>
         </Text>
-        <Text>
-          Miktar: <Text>{subItem.miktar_kg} KG</Text>
+        <Text style={{ fontWeight: 700 }}>
+          Miktar:{" "}
+          <Text style={{ fontWeight: 400 }}>{subItem.miktar_kg} KG</Text>
         </Text>
       </View>
     </View>
