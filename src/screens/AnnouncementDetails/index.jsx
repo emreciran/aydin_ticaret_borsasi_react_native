@@ -42,7 +42,7 @@ const AnnouncementDetails = ({ route }) => {
         <Image
           style={{ width: "100%", height: 400, resizeMode: "contain" }}
           source={{
-            uri: `${REACT_APP_API_URL}/Images/Announcements/${duyuru.imageName}`,
+            uri: `https://5a3f-212-253-124-232.ngrok-free.app/Images/Announcements/${duyuru.imageName}`,
           }}
         />
         <RenderHtml source={source} contentWidth={width} />

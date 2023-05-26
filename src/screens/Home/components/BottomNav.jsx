@@ -48,7 +48,10 @@ const BottomNav = () => {
         <Text>Bülten</Text>
       </View>
       <View style={styles.group}>
-        <TouchableOpacity style={styles.circle}>
+        <TouchableOpacity
+          style={styles.circle}
+          onPress={() => navigation.navigate("DuesMember")}
+        >
           <Ionicons name="card-outline" size={28} color="#fff" />
         </TouchableOpacity>
         <Text>Aidat/Üye</Text>

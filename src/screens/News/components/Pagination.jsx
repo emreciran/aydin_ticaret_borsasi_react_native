@@ -54,13 +54,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   dot: {
-    width: 12,
-    height: 12,
+    width:2,
+    height: 8,
     borderRadius: 6,
     marginHorizontal: 3,
     backgroundColor: "#ccc",
   },
   dotActive: {
-    backgroundColor: "#000",
+    backgroundColor: "#111",
   },
 });

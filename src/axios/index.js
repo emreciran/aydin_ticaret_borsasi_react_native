@@ -1,7 +1,6 @@
 import axios from "axios";
-import { REACT_APP_API_URL } from "@env";
 
-const BASE_URL = `${REACT_APP_API_URL}/api`;
+const BASE_URL = `https://5a3f-212-253-124-232.ngrok-free.app/api`;
 
 export default axios.create({
   baseURL: BASE_URL,

@@ -20,6 +20,9 @@ import MarketSubLinks from "../screens/Market/components/MarketSubLinks";
 import Communication from "../screens/Communication";
 import Settings from "../screens/Settings";
 import TescilBulletin from "../screens/TescilBulletin";
+import DuesMember from "../screens/DuesMember";
+import MemberInquiry from "../screens/DuesMember/components/MemberInquiry";
+import DuesInquiryPayment from "../screens/DuesMember/components/DuesInquiryPayment";
 
 const Stack = createNativeStackNavigator();
 
@@ -58,7 +61,7 @@ const Navigations = () => {
           component={Institutional}
           options={{
             headerTitle: "Kurumsal",
-            headerBackTitle: "Geri"
+            headerBackTitle: "Geri",
           }}
         />
         <Stack.Screen
@@ -107,10 +110,7 @@ const Navigations = () => {
             headerTitle: "Aylık Bültenler",
           }}
         />
-        <Stack.Screen 
-          name="TescilBulletin"
-          component={TescilBulletin}
-        />
+        <Stack.Screen name="TescilBulletin" component={TescilBulletin} />
         <Stack.Screen
           name="EventCalendar"
           component={EventCalendar}
@@ -145,6 +145,27 @@ const Navigations = () => {
           component={Settings}
           options={{
             headerTitle: "Ayarlar",
+          }}
+        />
+        <Stack.Screen
+          name="DuesMember"
+          component={DuesMember}
+          options={{
+            headerTitle: "Aidat/Üye",
+          }}
+        />
+        <Stack.Screen
+          name="MemberInquiry"
+          component={MemberInquiry}
+          options={{
+            headerTitle: "Üye Sorgulama",
+          }}
+        />
+        <Stack.Screen
+          name="DuesInquiryPayment"
+          component={DuesInquiryPayment}
+          options={{
+            headerTitle: "Aidat Sorgulama ...",
           }}
         />
       </Stack.Navigator>
