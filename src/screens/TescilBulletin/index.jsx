@@ -10,6 +10,7 @@ import {
   HaftalikTescilBulten,
 } from "../../constans";
 import TescilBulletinItemDesc from "./components/TescilBulletinItemDesc";
+import { truncate } from "lodash";
 
 const TescilBulletin = ({ route }) => {
   const navigation = useNavigation();
@@ -24,10 +25,12 @@ const TescilBulletin = ({ route }) => {
     navigation.setOptions({
       title: `${
         type === "Daily"
-          ? `${day} Günü Tescil ...`
+          ? truncate(`${day} Günü Tescil Tesil Bületin`, { length: 20 })
           : type === "Weekly"
-          ? `${prevWeek + " / " + currWeek} ...`
-          : `${month} Ayı Tescil Bülteni`
+          ? truncate(`${prevWeek + " / " + currWeek} Tescil Bülteni`, {
+              length: 25,
+            })
+          : truncate(`${month} Ayı Tescil Bülteni`, { length: 20 })
       }`,
     });
 

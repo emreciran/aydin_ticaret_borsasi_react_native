@@ -23,6 +23,9 @@ import TescilBulletin from "../screens/TescilBulletin";
 import DuesMember from "../screens/DuesMember";
 import MemberInquiry from "../screens/DuesMember/components/MemberInquiry";
 import DuesInquiryPayment from "../screens/DuesMember/components/DuesInquiryPayment";
+import CottonMarketComments from "../screens/Market/components/WeeklyMarketComments/CottonMarketComments";
+import GrapeMarketComments from "../screens/Market/components/WeeklyMarketComments/GrapeMarketComments";
+import { truncate } from "lodash";
 
 const Stack = createNativeStackNavigator();
 
@@ -60,7 +63,7 @@ const Navigations = () => {
           name="Institutional"
           component={Institutional}
           options={{
-            headerTitle: "Kurumsal",
+            headerTitle: truncate("Kurumsal", { length: 20 }),
             headerBackTitle: "Geri",
           }}
         />
@@ -68,7 +71,7 @@ const Navigations = () => {
           name="Announcement"
           component={Announcement}
           options={{
-            headerTitle: "Duyurular",
+            headerTitle: truncate("Duyurular", { length: 20 }),
           }}
         />
         <Stack.Screen
@@ -79,35 +82,35 @@ const Navigations = () => {
           name="News"
           component={News}
           options={{
-            headerTitle: "Haberler",
+            headerTitle: truncate("Haberler", { length: 20 }),
           }}
         />
         <Stack.Screen
           name="Newsletters"
           component={Newsletters}
           options={{
-            headerTitle: "Bültenler",
+            headerTitle: truncate("Bültenler", { length: 20 }),
           }}
         />
         <Stack.Screen
           name="DailyNewsletters"
           component={DailyNewsletters}
           options={{
-            headerTitle: "Günlük Bültenler",
+            headerTitle: truncate("Günlük Bültenler", { length: 20 }),
           }}
         />
         <Stack.Screen
           name="WeeklyNewsletters"
           component={WeeklyNewsletters}
           options={{
-            headerTitle: "Haftalık Bültenler",
+            headerTitle: truncate("Haftalık Bültenler", { length: 20 }),
           }}
         />
         <Stack.Screen
           name="MonthlyNewsletters"
           component={MonthlyNewsletters}
           options={{
-            headerTitle: "Aylık Bültenler",
+            headerTitle: truncate("Aylık Bültenler", { length: 20 }),
           }}
         />
         <Stack.Screen name="TescilBulletin" component={TescilBulletin} />
@@ -115,57 +118,83 @@ const Navigations = () => {
           name="EventCalendar"
           component={EventCalendar}
           options={{
-            headerTitle: "Etkinlik Takvimi",
+            headerTitle: truncate("Etkinlik Takvimi", { length: 20 }),
           }}
         />
         <Stack.Screen
           name="RequestSuggestion"
           component={RequestSuggestion}
           options={{
-            headerTitle: "Talep / Öneri",
+            headerTitle: truncate("Talep / Öneri", { length: 20 }),
           }}
         />
         <Stack.Screen
           name="Market"
           component={Market}
           options={{
-            headerTitle: "Piyasalar",
+            headerTitle: truncate("Piyasalar", { length: 20 }),
           }}
         />
         <Stack.Screen name="MarketSubLinks" component={MarketSubLinks} />
         <Stack.Screen
+          name="CottonMarketComments"
+          component={CottonMarketComments}
+          options={{
+            headerTitle: truncate("Pamuk", { length: 20 }),
+          }}
+        />
+        <Stack.Screen
+          name="GrapeMarketComments"
+          component={GrapeMarketComments}
+          options={{
+            headerTitle: truncate("Çekirdeksiz Kuru Üzüm", {
+              length: 20,
+            }),
+          }}
+        />
+        <Stack.Screen
           name="Communication"
           component={Communication}
           options={{
-            headerTitle: "İletişim",
+            headerTitle: truncate("İletişim", {
+              length: 20,
+            }),
           }}
         />
         <Stack.Screen
           name="Settings"
           component={Settings}
           options={{
-            headerTitle: "Ayarlar",
+            headerTitle: truncate("Ayarlar", {
+              length: 20,
+            }),
           }}
         />
         <Stack.Screen
           name="DuesMember"
           component={DuesMember}
           options={{
-            headerTitle: "Aidat/Üye",
+            headerTitle: truncate("Aidat/Üye", {
+              length: 20,
+            }),
           }}
         />
         <Stack.Screen
           name="MemberInquiry"
           component={MemberInquiry}
           options={{
-            headerTitle: "Üye Sorgulama",
+            headerTitle: truncate("Üye Sorgulama", {
+              length: 20,
+            }),
           }}
         />
         <Stack.Screen
           name="DuesInquiryPayment"
           component={DuesInquiryPayment}
           options={{
-            headerTitle: "Aidat Sorgulama ...",
+            headerTitle: truncate("Aidat Sorgulama ve Ödeme", {
+              length: 20,
+            }),
           }}
         />
       </Stack.Navigator>

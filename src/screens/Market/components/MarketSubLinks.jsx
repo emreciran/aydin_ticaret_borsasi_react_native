@@ -13,7 +13,11 @@ const MarketSubLinks = ({ route }) => {
 
   const returnLink = (link) => {
     return (
-      <TouchableOpacity style={styles.group} key={link.id}>
+      <TouchableOpacity
+        style={styles.group}
+        key={link.id}
+        onPress={() => navigation.navigate(link.href)}
+      >
         <Text style={styles.text}>{link.title}</Text>
         <FontAwesome name="angle-right" size={36} color="#3A98B9" />
       </TouchableOpacity>

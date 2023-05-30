@@ -12,6 +12,7 @@ import styles from "./styles/AnnouncementDetails";
 import * as WebBrowser from "expo-web-browser";
 import RenderHtml from "react-native-render-html";
 import { REACT_APP_API_URL } from "@env";
+import { truncate } from "lodash";
 
 const AnnouncementDetails = ({ route }) => {
   const { duyuru } = route.params;
@@ -26,10 +27,7 @@ const AnnouncementDetails = ({ route }) => {
 
   useEffect(() => {
     navigation.setOptions({
-      title:
-        duyuru.title.length > 15
-          ? duyuru.title.slice(0, 15) + "..."
-          : duyuru.title,
+      title: truncate(duyuru.title, { length: 20 }),
     });
   }, []);
 
@@ -42,7 +40,7 @@ const AnnouncementDetails = ({ route }) => {
         <Image
           style={{ width: "100%", height: 400, resizeMode: "contain" }}
           source={{
-            uri: `https://5a3f-212-253-124-232.ngrok-free.app/Images/Announcements/${duyuru.imageName}`,
+            uri: `https://38e6-212-253-124-232.ngrok-free.app/Images/Announcements/${duyuru.imageName}`,
           }}
         />
         <RenderHtml source={source} contentWidth={width} />

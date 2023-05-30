@@ -16,8 +16,8 @@ const MarketLinksConfig = {
       { title: "Çek.siz Kuru Üzüm Endeksi", id: 3 },
     ],
     haftalik_piyasa_yorumlari: [
-      { title: "Pamuk Piyasası Yorumu", id: 1 },
-      { title: "Çek.siz Kuru Üzüm Yorumu", id: 2 },
+      { title: "Pamuk Piyasası Yorumu", id: 1, href: "CottonMarketComments" },
+      { title: "Çek.siz Kuru Üzüm Yorumu", id: 2, href: "GrapeMarketComments" },
     ],
   },
 };
