@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import store from "./src/store";
 import moment from "moment";
 import 'moment/locale/tr'  
+import'./src/configs/i18n'
 
 export default function App() {
   moment.locale("tr")

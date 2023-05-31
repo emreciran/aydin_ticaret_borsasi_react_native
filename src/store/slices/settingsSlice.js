@@ -1,5 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSelector, createSlice } from "@reduxjs/toolkit";
+import { useTranslation } from "react-i18next";
 
 const initialState = {
   settings: {
@@ -11,6 +12,7 @@ const initialState = {
     haber: false,
     etkinlik_takvimi: false,
     dergi: false,
+    language: "tr",
   },
 };
 
@@ -22,6 +24,16 @@ export const fetchSettings = createAsyncThunk("fetchSettings", async (key) => {
     });
 });
 
+export const changeLanguage = (languageId) => (dispatch) => {
+  /*
+    Change Language
+     */
+  return i18n.changeLanguage(languageId).then(async () => {
+    await AsyncStorage.setItem("language", languageId);
+    dispatch(i18nSlice.actions.languageChanged(languageId));
+  });
+};
+
 const settings = createSlice({
   name: "settings",
   initialState,
@@ -31,6 +43,9 @@ const settings = createSlice({
         state.settings = action.payload;
       }
     },
+    languageChanged: (state, action) => {
+      state.language = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchSettings.fulfilled, (state, action) => {
@@ -39,6 +54,24 @@ const settings = createSlice({
   },
 });
 
+export const selectCurrentLanguageId = ({ i18n: _i18n }) => _i18n.language;
+
+export const selectLanguages = ({ i18n: _i18n }) => _i18n.languages;
+
+export const selectCurrentLanguageDirection = createSelector(
+  [selectCurrentLanguageId],
+  (id) => {
+    return i18n.dir(id);
+  }
+);
+
+export const selectCurrentLanguage = createSelector(
+  [selectCurrentLanguageId, selectLanguages],
+  (id, languages) => {
+    return languages.find((lng) => lng.id === id);
+  }
+);
+
 export default settings.reducer;
 
-export const { setSettings } = settings.actions;
+export const { setSettings, languageChanged } = settings.actions;

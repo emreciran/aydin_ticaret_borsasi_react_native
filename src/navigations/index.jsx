@@ -26,10 +26,13 @@ import DuesInquiryPayment from "../screens/DuesMember/components/DuesInquiryPaym
 import CottonMarketComments from "../screens/Market/components/WeeklyMarketComments/CottonMarketComments";
 import GrapeMarketComments from "../screens/Market/components/WeeklyMarketComments/GrapeMarketComments";
 import { truncate } from "lodash";
+import { useTranslation } from "react-i18next";
 
 const Stack = createNativeStackNavigator();
 
 const Navigations = () => {
+  const { t } = useTranslation();
+
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -71,7 +74,7 @@ const Navigations = () => {
           name="Announcement"
           component={Announcement}
           options={{
-            headerTitle: truncate("Duyurular", { length: 20 }),
+            headerTitle: truncate(t("navigation.announcement"), { length: 20 }),
           }}
         />
         <Stack.Screen
