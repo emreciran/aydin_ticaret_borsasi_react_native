@@ -1,5 +1,108 @@
 {
   "navigation": {
-    "announcement": "Announcemets"
+    "announcement": "Announcemets",
+    "news": "News",
+    "institutional": "Institutional",
+    "bulletin": {
+      "main": "Bulletin",
+      "daily": {
+        "bulletin": "Daily Bulletin",
+        "tescil": "Day Registration Bulletin"
+      },
+      "weekly": {
+        "bulletin": "Weekly Bulletin",
+        "tescil": "Weekly Registration Bulletin"
+      },
+      "monthly": {
+        "bulletin": "Monthly Bulletin",
+        "tescil": "Monthly Registration Bulletin"
+      }
+    },
+    "dues_member": {
+      "main": "Dues / Member",
+      "MemberInquiry": "Member Inquiry",
+      "DuesInquiryPayment": "Dues Inquiry Payment"
+    },
+    "market": {
+      "main": "Market",
+      "CottonMarketComments": "Cotton",
+      "GrapeMarketComments": "Seedless Raisins"
+    },
+    "event_calendar": "Event Calendar",
+    "req_sugg": "Request / Suggestion",
+    "communication": "Communication",
+    "settings": "Settings"
+  },
+  "home": {
+    "bottom_nav": {
+      "kurumsal": "Institutional",
+      "duyuru": "Announcemets",
+      "haber": "News",
+      "bulten": "Bulletin",
+      "aidat_uye": "Dues/Member",
+      "piyasa": "Market",
+      "etkinlik_takvim": "Event Calendar",
+      "talep_oneri": "Request Suggestion",
+      "iletisim": "Communication",
+      "ayarlar": "Settings"
+    },
+    "time": "Registration Prices"
+  },
+  "institutional": {
+    "Başkanın Mesajı": "The message of the President",
+    "Tarihçe": "History",
+    "Kalite Politikası": "Quality Policy",
+    "Dergi": "Magazine",
+    "Meclis": "Council",
+    "Yönetim Kurulu": "Board of Directors",
+    "Disiplin Kurulu": "Board of discipline"
+  },
+  "announcement_details": {
+    "regards": "Best regards,",
+    "button": "Click for detailed information"
+  },
+  "bulletin": {
+    "links": {
+      "daily": "Daily Bulletins",
+      "weekly": "Weekly Bulletins",
+      "monthly": "Monthly Bulletins"
+    },
+    "sub_links": {
+      "tescil": "Registration Bulletin",
+      "pamuk": "Cotton Bulletin"
+    },
+    "tescil": {
+      "satis_sekli": "Kinds of selling",
+      "islem_adedi": "Number of Transactions",
+      "ortalama": "Average",
+      "miktar": "Amount"
+    }
+  },
+  "dues_member": {
+    "links": {
+      "uye_sorgu": "Member Inquiry",
+      "aidat_sorgu_odeme": "Dues Inquiry Payment"
+    },
+    "MemberInquiry": {
+      "sahis_firma": "Person or Company",
+      "urun_adi": "Product Name",
+      "meslek_grup": "Profession Group",
+      "sahis_firma_placeholder": "Enter Person or Company",
+      "urun_adi_placeholder": "Enter Product Name",
+      "meslek_grup_placeholder": "Select Occupational Group",
+      "aski_uye": "Suspended Members",
+      "tasfiye_uye": "Members in Liquidation",
+      "search": "Search...",
+      "button": "Find"
+    },
+    "DuesInquiryPayment": {
+      "info_text": "To see your debt statement, type your member registration number and the password forwarded to your e-mail address and press the button Query Debt.",
+      "uye_sicil": "Member Registration No",
+      "sifre": "Password",
+      "uye_sicil_placeholder": "Enter Member Registration No",
+      "sifre_placeholder": "Enter Password",
+      "button": "Debt Inquiry",
+      "text": "If you do not know your member registration number, click to find it."
+    }
   }
 }

@@ -10,9 +10,11 @@ import styles from "../styles/NewsletterLinks";
 import { FontAwesome } from "@expo/vector-icons";
 import Logo from "../../../../assets/logo-atb.png";
 import { useNavigation } from "@react-navigation/native";
+import { useTranslation } from "react-i18next";
 
 const MonthlyNewsletters = () => {
   const navigation = useNavigation();
+  const { t } = useTranslation();
 
   return (
     <ImageBackground
@@ -30,11 +32,11 @@ const MonthlyNewsletters = () => {
             })
           }
         >
-          <Text style={styles.text}>Tescil Bülteni</Text>
+          <Text style={styles.text}>{t("bulletin.sub_links.tescil")}</Text>
           <FontAwesome name="angle-right" size={36} color="#3A98B9" />
         </TouchableOpacity>
         <TouchableOpacity style={styles.group}>
-          <Text style={styles.text}>Pamuk Bülteni</Text>
+          <Text style={styles.text}>{t("bulletin.sub_links.pamukk")}</Text>
           <FontAwesome name="angle-right" size={36} color="#3A98B9" />
         </TouchableOpacity>
       </ScrollView>

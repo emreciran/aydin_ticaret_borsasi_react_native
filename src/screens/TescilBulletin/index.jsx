@@ -11,6 +11,7 @@ import {
 } from "../../constans";
 import TescilBulletinItemDesc from "./components/TescilBulletinItemDesc";
 import { truncate } from "lodash";
+import { useTranslation } from "react-i18next";
 
 const TescilBulletin = ({ route }) => {
   const navigation = useNavigation();
@@ -21,16 +22,18 @@ const TescilBulletin = ({ route }) => {
   const prevWeek = moment().add(-1, "week").format("DD.MM.YYYY");
   const currWeek = moment().add(0, "week").format("DD.MM.YYYY");
 
+  const { t } = useTranslation();
+
   useEffect(() => {
     navigation.setOptions({
       title: `${
         type === "Daily"
-          ? truncate(`${day} Günü Tescil Tesil Bületin`, { length: 20 })
+          ? truncate(`${day} ${t("navigation.bulletin.daily.tescil")}`, { length: 20 })
           : type === "Weekly"
-          ? truncate(`${prevWeek + " / " + currWeek} Tescil Bülteni`, {
+          ? truncate(`${prevWeek + " / " + currWeek} ${t("navigation.bulletin.weekly.tescil")}`, {
               length: 25,
             })
-          : truncate(`${month} Ayı Tescil Bülteni`, { length: 20 })
+          : truncate(`${month} ${t("navigation.bulletin.monthly.tescil")}`, { length: 20 })
       }`,
     });
 

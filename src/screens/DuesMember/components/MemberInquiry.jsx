@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { TextInput, Button, Checkbox } from "react-native-paper";
 import { Dropdown } from "react-native-element-dropdown";
 import styles from "../styles/MemberInquiry";
+import { useTranslation } from "react-i18next";
 
 const data = [
   { label: "ÇIRÇIRLAMA FAALİYETİ", value: "1" },
@@ -23,12 +24,16 @@ const MemberInquiry = () => {
   const [askiUye, setAskiUye] = useState(false);
   const [tasfiyeUye, setTasfiyeUye] = useState(false);
 
+  const { t } = useTranslation();
+
   return (
     <View style={{ padding: 15 }}>
       <View style={styles.container}>
-        <Text style={styles.text}>Şahıs veya Firma</Text>
+        <Text style={styles.text}>
+          {t("dues_member.MemberInquiry.sahis_firma")}
+        </Text>
         <TextInput
-          placeholder="Şahıs veya Firma Giriniz"
+          placeholder={t("dues_member.MemberInquiry.sahis_firma_placeholder")}
           mode="outlined"
           style={{ width: "60%" }}
           value={sahisFirma}
@@ -37,9 +42,11 @@ const MemberInquiry = () => {
         />
       </View>
       <View style={styles.container}>
-        <Text style={styles.text}>Ürün Adı</Text>
+        <Text style={styles.text}>
+          {t("dues_member.MemberInquiry.urun_adi")}
+        </Text>
         <TextInput
-          placeholder="Ürün Adı Giriniz"
+          placeholder={t("dues_member.MemberInquiry.urun_adi_placeholder")}
           mode="outlined"
           value={urunAdi}
           onChangeText={(text) => setUrunAdi(text)}
@@ -48,7 +55,9 @@ const MemberInquiry = () => {
         />
       </View>
       <View style={[styles.container, { marginTop: 8 }]}>
-        <Text style={styles.text}>Meslek Grubu</Text>
+        <Text style={styles.text}>
+          {t("dues_member.MemberInquiry.meslek_grup")}
+        </Text>
         <Dropdown
           style={[styles.dropdown, isFocus && { borderColor: "#2F58CD" }]}
           placeholderStyle={styles.placeholderStyle}
@@ -59,8 +68,12 @@ const MemberInquiry = () => {
           maxHeight={300}
           labelField="label"
           valueField="value"
-          placeholder={!isFocus ? "Meslek Grubu Seçiniz" : "..."}
-          searchPlaceholder="Ara..."
+          placeholder={
+            !isFocus
+              ? `${t("dues_member.MemberInquiry.urun_adi_placeholder")}`
+              : "..."
+          }
+          searchPlaceholder={t("dues_member.MemberInquiry.search")}
           value={meslekGrup}
           onFocus={() => setIsFocus(true)}
           onBlur={() => setIsFocus(false)}
@@ -80,7 +93,7 @@ const MemberInquiry = () => {
           }}
         />
         <Text onPress={() => setAskiUye(!askiUye)} style={styles.text}>
-          Askıdaki üyeler
+          {t("dues_member.MemberInquiry.aski_uye")}
         </Text>
       </View>
       <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -91,7 +104,7 @@ const MemberInquiry = () => {
           }}
         />
         <Text onPress={() => setTasfiyeUye(!tasfiyeUye)} style={styles.text}>
-          Tasfiye halindeki üyeler
+          {t("dues_member.MemberInquiry.tasfiye_uye")}
         </Text>
       </View>
       <View>
@@ -101,7 +114,7 @@ const MemberInquiry = () => {
           buttonColor="#2F58CD"
           style={{ marginTop: 14 }}
         >
-          Bul
+          {t("dues_member.MemberInquiry.button")}
         </Button>
       </View>
     </View>

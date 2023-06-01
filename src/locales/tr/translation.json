@@ -1,5 +1,108 @@
 {
   "navigation": {
-    "announcement": "Announcemets"
+    "announcement": "Duyurular",
+    "news": "Haberler",
+    "institutional": "Kurumsal",
+    "bulletin": {
+      "main": "Bülten",
+      "daily": {
+        "bulletin": "Günlük Bültenler",
+        "tescil": "Günü Tescil Bülteni"
+      },
+      "weekly": {
+        "bulletin": "Haftalık Bültenler",
+        "tescil": "Haftası Tesil Bülteni"
+      },
+      "monthly": {
+        "bulletin": "Aylık Bültenler",
+        "tescil": "Ayı Tescil Bülteni"
+      }
+    },
+    "dues_member": {
+      "main": "Aidat / Üye",
+      "MemberInquiry": "Üye Sorgulama",
+      "DuesInquiryPayment": "Aidat Sorgulama ve Ödeme"
+    },
+    "market": {
+      "main": "Piyasalar",
+      "CottonMarketComments": "Pamuk",
+      "GrapeMarketComments": "Çekirdeksiz Kuru Üzüm"
+    },
+    "event_calendar": "Etkinlik Takvimi",
+    "req_sugg": "Talep / Öneri",
+    "communication": "İletişim",
+    "settings": "Ayarlar"
+  },
+  "home": {
+    "bottom_nav": {
+      "kurumsal": "Kurumsal",
+      "duyuru": "Duyuru",
+      "haber": "Haber",
+      "bulten": "Bülten",
+      "aidat_uye": "Aidat/Üye",
+      "piyasa": "Piyasa",
+      "etkinlik_takvim": "Etkinlik Takvimi",
+      "talep_oneri": "Talep/Öneri",
+      "iletisim": "İletişim",
+      "ayarlar": "Ayarlar"
+    },
+    "time": "Tescil Fiyatları"
+  },
+  "institutional": {
+    "Başkanın Mesajı": "Başkanın Mesajı",
+    "Tarihçe": "Tarihçe",
+    "Kalite Politikası": "Kalite Politikası",
+    "Dergi": "Dergi",
+    "Meclis": "Meclis",
+    "Yönetim Kurulu": "Yönetim Kurulu",
+    "Disiplin Kurulu": "Disiplin Kurulu"
+  },
+  "announcement_details": {
+    "regards": "Saygılarımızla,",
+    "button": "Detaylı bilgi için tıklayınız"
+  },
+  "bulletin": {
+    "links": {
+      "daily": "Günlük Bültenler",
+      "weekly": "Haftalık Bültenler",
+      "monthly": "Aylık Bültenler"
+    },
+    "sub_links": {
+      "tescil": "Tescil Bülteni",
+      "pamuk": "Pamuk Bülteni"
+    },
+    "tescil": {
+      "satis_sekli": "Satış Şekli",
+      "islem_adedi": "İşlem Adedi",
+      "ortalama": "Ortalama",
+      "miktar": "Adet"
+    }
+  },
+  "dues_member": {
+    "links": {
+      "uye_sorgu": "Üye Sorgulama",
+      "aidat_sorgu_odeme": "Aidat Sorgulama ve Ödeme"
+    },
+    "MemberInquiry": {
+      "sahis_firma": "Şahıs veya Firma",
+      "urun_adi": "Ürün Adı",
+      "meslek_grup": "Meslek Grubu",
+      "sahis_firma_placeholder": "Şahıs veya Firma Giriniz",
+      "urun_adi_placeholder": "Ürün Adı Giriniz",
+      "meslek_grup_placeholder": "Meslek Grubu Seçiniz",
+      "aski_uye": "Askıdaki Üyeler",
+      "tasfiye_uye": "Tasfiye halindeki üyeler",
+      "search": "Ara...",
+      "button": "Bul"
+    },
+    "DuesInquiryPayment": {
+      "info_text": "Borç dökümünüzü görmek için üye sicil numaranızı ve e-posta adresinize gönderilen şifreyi yazıp Borç Sorgula düğmesine basınız.",
+      "uye_sicil": "Üye Sicil No",
+      "sifre": "Şifre",
+      "uye_sicil_placeholder": "Üye Sicil No Giriniz",
+      "sifre_placeholder": "Şifrenizi Giriniz",
+      "button": "Borç Sorgula",
+      "text": "Üye sicil numaranızı bilmiyorsanız bulmak için tıklayınız"
+    }
   }
 }

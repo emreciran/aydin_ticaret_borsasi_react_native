@@ -66,7 +66,7 @@ const Navigations = () => {
           name="Institutional"
           component={Institutional}
           options={{
-            headerTitle: truncate("Kurumsal", { length: 20 }),
+            headerTitle: truncate(t("navigation.institutional"), { length: 20 }),
             headerBackTitle: "Geri",
           }}
         />
@@ -85,35 +85,35 @@ const Navigations = () => {
           name="News"
           component={News}
           options={{
-            headerTitle: truncate("Haberler", { length: 20 }),
+            headerTitle: truncate(t("navigation.news"), { length: 20 }),
           }}
         />
         <Stack.Screen
           name="Newsletters"
           component={Newsletters}
           options={{
-            headerTitle: truncate("Bültenler", { length: 20 }),
+            headerTitle: truncate(t("navigation.bulletin.main"), { length: 20 }),
           }}
         />
         <Stack.Screen
           name="DailyNewsletters"
           component={DailyNewsletters}
           options={{
-            headerTitle: truncate("Günlük Bültenler", { length: 20 }),
+            headerTitle: truncate(t("navigation.bulletin.daily.bulletin"), { length: 20 }),
           }}
         />
         <Stack.Screen
           name="WeeklyNewsletters"
           component={WeeklyNewsletters}
           options={{
-            headerTitle: truncate("Haftalık Bültenler", { length: 20 }),
+            headerTitle: truncate(t("navigation.bulletin.weekly.bulletin"), { length: 20 }),
           }}
         />
         <Stack.Screen
           name="MonthlyNewsletters"
           component={MonthlyNewsletters}
           options={{
-            headerTitle: truncate("Aylık Bültenler", { length: 20 }),
+            headerTitle: truncate(t("navigation.bulletin.monthly.bulletin"), { length: 20 }),
           }}
         />
         <Stack.Screen name="TescilBulletin" component={TescilBulletin} />
@@ -121,21 +121,21 @@ const Navigations = () => {
           name="EventCalendar"
           component={EventCalendar}
           options={{
-            headerTitle: truncate("Etkinlik Takvimi", { length: 20 }),
+            headerTitle: truncate(t("navigation.event_calendar"), { length: 20 }),
           }}
         />
         <Stack.Screen
           name="RequestSuggestion"
           component={RequestSuggestion}
           options={{
-            headerTitle: truncate("Talep / Öneri", { length: 20 }),
+            headerTitle: truncate(t("navigation.req_sugg"), { length: 20 }),
           }}
         />
         <Stack.Screen
           name="Market"
           component={Market}
           options={{
-            headerTitle: truncate("Piyasalar", { length: 20 }),
+            headerTitle: truncate(t("navigation.market.main"), { length: 20 }),
           }}
         />
         <Stack.Screen name="MarketSubLinks" component={MarketSubLinks} />
@@ -143,14 +143,14 @@ const Navigations = () => {
           name="CottonMarketComments"
           component={CottonMarketComments}
           options={{
-            headerTitle: truncate("Pamuk", { length: 20 }),
+            headerTitle: truncate(t("navigation.market.CottonMarketComments"), { length: 20 }),
           }}
         />
         <Stack.Screen
           name="GrapeMarketComments"
           component={GrapeMarketComments}
           options={{
-            headerTitle: truncate("Çekirdeksiz Kuru Üzüm", {
+            headerTitle: truncate(t("navigation.market.GrapeMarketComments"), {
               length: 20,
             }),
           }}
@@ -159,7 +159,7 @@ const Navigations = () => {
           name="Communication"
           component={Communication}
           options={{
-            headerTitle: truncate("İletişim", {
+            headerTitle: truncate(t("navigation.communication"), {
               length: 20,
             }),
           }}
@@ -168,7 +168,7 @@ const Navigations = () => {
           name="Settings"
           component={Settings}
           options={{
-            headerTitle: truncate("Ayarlar", {
+            headerTitle: truncate(t("navigation.settings"), {
               length: 20,
             }),
           }}
@@ -177,7 +177,7 @@ const Navigations = () => {
           name="DuesMember"
           component={DuesMember}
           options={{
-            headerTitle: truncate("Aidat/Üye", {
+            headerTitle: truncate(t("navigation.dues_member.main"), {
               length: 20,
             }),
           }}
@@ -186,7 +186,7 @@ const Navigations = () => {
           name="MemberInquiry"
           component={MemberInquiry}
           options={{
-            headerTitle: truncate("Üye Sorgulama", {
+            headerTitle: truncate(t("navigation.dues_member.MemberInquiry"), {
               length: 20,
             }),
           }}
@@ -195,7 +195,7 @@ const Navigations = () => {
           name="DuesInquiryPayment"
           component={DuesInquiryPayment}
           options={{
-            headerTitle: truncate("Aidat Sorgulama ve Ödeme", {
+            headerTitle: truncate(t("navigation.dues_member.DuesInquiryPayment"), {
               length: 20,
             }),
           }}

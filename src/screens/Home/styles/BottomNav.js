@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
   },
   group: {
     alignItems: "center",
+    maxWidth: 60
   },
 });
 

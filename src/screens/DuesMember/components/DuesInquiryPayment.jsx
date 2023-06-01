@@ -2,23 +2,31 @@ import { View, Text } from "react-native";
 import styles from "../styles/MemberInquiry";
 import { TextInput, Button, Checkbox } from "react-native-paper";
 import React, { useState } from "react";
+import { t } from "i18next";
+import { useTranslation } from "react-i18next";
+import { truncate } from "lodash";
 
 const DuesInquiryPayment = () => {
   const [sicilNo, setSicilNo] = useState("");
   const [sifre, setSifre] = useState("");
 
+  const { t } = useTranslation();
+
   return (
     <View style={{ padding: 15 }}>
       <Text style={{ textAlign: "justify", color: "#333" }}>
-        Borç dökümünüzü görmek için üye sicil numaranızı ve e-posta adresinize
-        gönderilen şifreyi yazıp{" "}
-        <Text style={{ fontWeight: "700" }}>Borç Sorgula</Text> düğmesine
-        basınız.
+        {t("dues_member.DuesInquiryPayment.info_text")}
       </Text>
       <View style={styles.container}>
-        <Text style={styles.text}>Üye Sicil No</Text>
+        <Text style={styles.text}>
+          {truncate(t("dues_member.DuesInquiryPayment.uye_sicil"), {
+            length: 15,
+          })}
+        </Text>
         <TextInput
-          placeholder="Üye sicil numaranızı giriniz"
+          placeholder={t(
+            "dues_member.DuesInquiryPayment.uye_sicil_placeholder"
+          )}
           mode="outlined"
           style={{ width: "65%" }}
           activeOutlineColor="#2F58CD"
@@ -27,9 +35,11 @@ const DuesInquiryPayment = () => {
         />
       </View>
       <View style={styles.container}>
-        <Text style={styles.text}>Şifre</Text>
+        <Text style={styles.text}>
+          {truncate(t("dues_member.DuesInquiryPayment.sifre"), { length: 15 })}
+        </Text>
         <TextInput
-          placeholder="Şifrenizi giriniz"
+          placeholder={t("dues_member.DuesInquiryPayment.sifre_placeholder")}
           mode="outlined"
           style={{ width: "65%" }}
           activeOutlineColor="#2F58CD"
@@ -44,21 +54,18 @@ const DuesInquiryPayment = () => {
           buttonColor="#2F58CD"
           style={{ marginTop: 14 }}
         >
-          Borç Sorgula
+          {t("dues_member.DuesInquiryPayment.button")}
         </Button>
       </View>
       <View style={{ marginTop: 20, gap: 15 }}>
         <Text style={{ textAlign: "justify", color: "#333" }}>
-          Üye sicil numaranızı bilmiyorsanız bulmak için{" "}
-          <Text style={{ fontWeight: "700" }}>tıklayınız.</Text>
+          {t("dues_member.DuesInquiryPayment.text")}
         </Text>
         <Text style={{ textAlign: "justify", color: "#333" }}>
-          Üye sicil numaranızı bilmiyorsanız bulmak için{" "}
-          <Text style={{ fontWeight: "700" }}>tıklayınız.</Text>
+          {t("dues_member.DuesInquiryPayment.text")}
         </Text>
         <Text style={{ textAlign: "justify", color: "#333" }}>
-          Üye sicil numaranızı bilmiyorsanız bulmak için{" "}
-          <Text style={{ fontWeight: "700" }}>tıklayınız.</Text>
+          {t("dues_member.DuesInquiryPayment.text")}
         </Text>
       </View>
     </View>

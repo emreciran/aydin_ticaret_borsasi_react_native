@@ -13,9 +13,11 @@ import * as WebBrowser from "expo-web-browser";
 import RenderHtml from "react-native-render-html";
 import { REACT_APP_API_URL } from "@env";
 import { truncate } from "lodash";
+import { useTranslation } from "react-i18next";
 
 const AnnouncementDetails = ({ route }) => {
   const { duyuru } = route.params;
+  const { t } = useTranslation();
 
   const source = {
     html: duyuru.details,
@@ -40,18 +42,18 @@ const AnnouncementDetails = ({ route }) => {
         <Image
           style={{ width: "100%", height: 400, resizeMode: "contain" }}
           source={{
-            uri: `https://33b8-212-253-124-232.ngrok-free.app/Images/Announcements/${duyuru.imageName}`,
+            uri: `https://0fd9-212-253-124-232.ngrok-free.app/Images/Announcements/${duyuru.imageName}`,
           }}
         />
         <RenderHtml source={source} contentWidth={width} />
         <View style={styles.textContainer}>
-          <Text style={styles.text}>Saygılarımızla,</Text>
+          <Text style={styles.text}>{t("announcement_details.regards")}</Text>
           <Text style={styles.text}>Aydın Ticaret Borsası</Text>
           <Text style={styles.text}>{duyuru.createdDate}</Text>
         </View>
         <View style={styles.buttonWrapper}>
           <Button
-            title="Detaylı bilgi için Tıklayınız"
+            title={t("announcement_details.button")}
             onPress={() => WebBrowser.openBrowserAsync(`${duyuru.link}`)}
           />
         </View>

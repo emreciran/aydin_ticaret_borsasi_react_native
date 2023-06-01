@@ -1,22 +1,29 @@
 import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
 
-import en from "../locales/en/translation.json";
-    
+import turkish from "../locales/tr/translation.json";
+import english from "../locales/en/translation.json";
+import { getLocales } from 'expo-localization';
+
 const resources = {
-  en,
-  tr,
+  en: { translation: english },
+  tr: { translation: turkish },
 };
+const deviceLanguage = getLocales()[0].languageCode;
 
 i18next.use(initReactI18next).init({
+  compatibilityJSON: "v3",
   resources,
-  lng: "tr",
-  keySeparator: false, // we do not use keys in form messages.welcome
+  debug: false,
+  lng: deviceLanguage,
+  initImmediate: false,
 
+  react: {
+    useSuspense: false,
+  },
   interpolation: {
     escapeValue: false, // react already safes from xss
   },
 });
 
 export default i18next;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               

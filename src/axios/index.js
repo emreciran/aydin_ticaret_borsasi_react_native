@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = `https://33b8-212-253-124-232.ngrok-free.app/api`;
+const BASE_URL = `https://0fd9-212-253-124-232.ngrok-free.app/api`;
 
 export default axios.create({
   baseURL: BASE_URL,
