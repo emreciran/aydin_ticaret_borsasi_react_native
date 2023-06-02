@@ -7,7 +7,7 @@ import { useNavigation } from "@react-navigation/native";
 
 const MarketSubLinks = ({ route }) => {
   const { id, title } = route.params;
-  const subLink = MarketLinksConfig.subLinks;
+  const subLink = MarketLinksConfig().subLinks;
 
   const navigation = useNavigation();
 

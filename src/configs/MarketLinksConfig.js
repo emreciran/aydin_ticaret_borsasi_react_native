@@ -1,25 +1,84 @@
-const MarketLinksConfig = {
-  mainLinks: [
-    { title: "Pamuk Piyasası", id: 1 },
-    { title: "Çek.siz Kuru Üzüm", id: 2 },
-    { title: "Haftalık Piyasa Yorumları", id: 3 },
-  ],
-  subLinks: {
-    pamuk_piyasasi: [
-      { title: "Pamuk Anlık Salon Verileri", id: 1 },
-      { title: "Pamuk Referans Fiyatları", id: 2 },
-      { title: "Dünya Pamuk Verileri", id: 3 },
+import { truncate } from "lodash";
+import { useTranslation } from "react-i18next";
+
+const MarketLinksConfig = () => {
+  const { t } = useTranslation();
+
+  const links = {
+    mainLinks: [
+      { title: truncate(t("market.links.pamuk.main"), { length: 25 }), id: 1 },
+      {
+        title: truncate(t("market.links.kuru_uzum.main"), { length: 25 }),
+        id: 2,
+      },
+      {
+        title: truncate(t("market.links.haftalik_piyasa_yorum.main"), {
+          length: 25,
+        }),
+        id: 3,
+      },
     ],
-    kuru_uzum_piyasasi: [
-      { title: "Çek.siz Kuru Üzüm Anlık Salon Verileri", id: 1 },
-      { title: "Çek.siz Kuru Üzüm Referans Verileri", id: 2 },
-      { title: "Çek.siz Kuru Üzüm Endeksi", id: 3 },
-    ],
-    haftalik_piyasa_yorumlari: [
-      { title: "Pamuk Piyasası Yorumu", id: 1, href: "CottonMarketComments" },
-      { title: "Çek.siz Kuru Üzüm Yorumu", id: 2, href: "GrapeMarketComments" },
-    ],
-  },
+    subLinks: {
+      pamuk_piyasasi: [
+        {
+          title: truncate(t("market.links.pamuk.anlik_salon_veri"), {
+            length: 25,
+          }),
+          id: 1,
+        },
+        {
+          title: truncate(t("market.links.pamuk.referans_fiyat"), {
+            length: 25,
+          }),
+          id: 2,
+        },
+        {
+          title: truncate(t("market.links.pamuk.dünya_pamuk_veri"), {
+            length: 25,
+          }),
+          id: 3,
+        },
+      ],
+      kuru_uzum_piyasasi: [
+        {
+          title: truncate(t("market.links.kuru_uzum.anlik_salon_veri"), {
+            length: 25,
+          }),
+          id: 1,
+        },
+        {
+          title: truncate(t("market.links.kuru_uzum.referans_fiyat"), {
+            length: 25,
+          }),
+          id: 2,
+        },
+        {
+          title: truncate(t("market.links.kuru_uzum.endeks"), { length: 20 }),
+          id: 3,
+        },
+      ],
+      haftalik_piyasa_yorumlari: [
+        {
+          title: truncate(
+            t("market.links.haftalik_piyasa_yorum.pamuk_piyasa_yorum"),
+            { length: 25 }
+          ),
+          id: 1,
+          href: "CottonMarketComments",
+        },
+        {
+          title: truncate(
+            t("market.links.haftalik_piyasa_yorum.ceksiz_kuru_uzum_yorum"),
+            { length: 25 }
+          ),
+          id: 2,
+          href: "GrapeMarketComments",
+        },
+      ],
+    },
+  };
+
+  return links;
 };
 
 export default MarketLinksConfig;

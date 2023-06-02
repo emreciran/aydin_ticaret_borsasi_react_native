@@ -32,7 +32,7 @@ const SlideItem = ({ item }) => {
         <View style={styles.container}>
           <Animated.Image
             source={{
-              uri: `https://0fd9-212-253-124-232.ngrok-free.app/Images/News/${item.imageName}`,
+              uri: `https://5a47-212-253-124-232.ngrok-free.app/Images/News/${item.imageName}`,
             }}
             resizeMode="contain"
             style={{

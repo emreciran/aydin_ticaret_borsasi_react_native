@@ -104,5 +104,26 @@
       "button": "Debt Inquiry",
       "text": "If you do not know your member registration number, click to find it."
     }
+  },
+  "market": {
+    "links": {
+      "pamuk": {
+        "main": "Cotton Market",
+        "anlik_salon_veri": "Cotton Instant Hall Data",
+        "referans_fiyat": "Cotton Reference Prices",
+        "dünya_pamuk_veri": "World Cotton Data"
+      },
+      "kuru_uzum": {
+        "main": "Seedless Raisins",
+        "anlik_salon_veri": "Seedless Raisin Instant Salon Data",
+        "referans_fiyat": "Seedless Raisin Reference Prices",
+        "endeks": "Seedless Raisin Index"
+      },
+      "haftalik_piyasa_yorum": {
+        "main": "Weekly Market Comments",
+        "pamuk_piyasa_yorum": "Cotton Market Commentary",
+        "ceksiz_kuru_uzum_yorum": "Seedless Raisins Review"
+      }
+    }
   }
 }

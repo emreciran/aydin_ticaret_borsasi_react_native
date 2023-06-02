@@ -104,5 +104,26 @@
       "button": "Borç Sorgula",
       "text": "Üye sicil numaranızı bilmiyorsanız bulmak için tıklayınız"
     }
+  },
+  "market": {
+    "links": {
+      "pamuk": {
+        "main": "Pamuk Piyasası",
+        "anlik_salon_veri": "Pamuk Anlık Salon Verileri",
+        "referans_fiyat": "Pamuk Referans Fiyatları",
+        "dünya_pamuk_veri": "Dünya Pamuk Verileri"
+      },
+      "kuru_uzum": {
+        "main": "Çekirdeksiz Kuru Üzüm",
+        "anlik_salon_veri": "Çekirdeksiz Kuru Üzüm Anlık Salon Verileri",
+        "referans_fiyat": "Çekirdeksiz Kuru Üzüm Referans Fiyatları",
+        "endeks": "Çekirdeksiz Kuru Üzüm Endeksi"
+      },
+      "haftalik_piyasa_yorum": {
+        "main": "Haftalık Piyasa Yorumları",
+        "pamuk_piyasa_yorum": "Pamuk Piyasa Yorumu",
+        "ceksiz_kuru_uzum_yorum": "Çekirdeksiz Kuru Üzüm Yorumu"
+      }
+    }
   }
 }

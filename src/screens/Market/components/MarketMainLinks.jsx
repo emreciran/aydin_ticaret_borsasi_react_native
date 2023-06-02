@@ -8,9 +8,11 @@ import { useNavigation } from "@react-navigation/native";
 const MarketMainLinks = () => {
   const navigation = useNavigation();
 
+  const links = MarketLinksConfig();
+
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={{ padding: 12 }}>
-      {MarketLinksConfig.mainLinks.map((link) => (
+      {links.mainLinks.map((link) => (
         <TouchableOpacity
           style={styles.group}
           key={link.id}
