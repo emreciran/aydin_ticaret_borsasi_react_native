@@ -7,10 +7,14 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useDispatch } from "react-redux";
 import { setSettings } from "../../../store/slices/settingsSlice";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 const SettingsItem = () => {
   const dispatch = useDispatch();
   const { settings } = useSelector((state) => state.settingsSlice);
+  const { t } = useTranslation();
+
+  const settingsTitle = settingsConfig();
 
   // const getData = async (key) => {
   //   try {
@@ -38,12 +42,12 @@ const SettingsItem = () => {
   return (
     <View>
       <View>
-        {settingsConfig.pamuk && (
+        {settingsTitle.pamuk && (
           <View>
-            <Text style={styles.title}>PAMUK PİYASASI VERİLERİ</Text>
+            <Text style={styles.title}>{t("settings.pamuk.title")}</Text>
             <View style={styles.container}>
               <View style={styles.item}>
-                {settingsConfig.pamuk.map((item) => (
+                {settingsTitle.pamuk.map((item) => (
                   <Text key={item.id} style={styles.text}>
                     {item.name}
                   </Text>
@@ -66,13 +70,15 @@ const SettingsItem = () => {
         )}
       </View>
       <View>
-        {settingsConfig.ceksiz_kuru_uzum && (
+        {settingsTitle.ceksiz_kuru_uzum && (
           <View>
-            <Text style={styles.title}>ÇEK.SİZ KURU ÜZÜM VERİLERİ</Text>
+            <Text style={styles.title}>
+              {t("settings.ceksiz_kuru_uzum.title")}
+            </Text>
             <View style={styles.container}>
               <View style={styles.item}>
                 <View style={styles.item}>
-                  {settingsConfig.ceksiz_kuru_uzum.map((item) => (
+                  {settingsTitle.ceksiz_kuru_uzum.map((item) => (
                     <Text key={item.id} style={styles.text}>
                       {item.name}
                     </Text>
@@ -98,12 +104,14 @@ const SettingsItem = () => {
         )}
       </View>
       <View>
-        {settingsConfig.tescil_bulten && (
+        {settingsTitle.tescil_bulten && (
           <View>
-            <Text style={styles.title}>TESCİL BÜLTENLERİ</Text>
+            <Text style={styles.title}>
+              {t("settings.tescil_bulten.title")}
+            </Text>
             <View style={styles.container}>
               <View style={styles.item}>
-                {settingsConfig.tescil_bulten.map((item) => (
+                {settingsTitle.tescil_bulten.map((item) => (
                   <Text key={item.id} style={styles.text}>
                     {item.name}
                   </Text>
@@ -128,12 +136,14 @@ const SettingsItem = () => {
         )}
       </View>
       <View>
-        {settingsConfig.aylik_finans_emtia && (
+        {settingsTitle.aylik_finans_emtia && (
           <View>
-            <Text style={styles.title}>AYLIK FİNANS VE EMTİA BÜLTENLERİ</Text>
+            <Text style={styles.title}>
+              {t("settings.aylik_finans_emtia.title")}
+            </Text>
             <View style={styles.container}>
               <View style={styles.item}>
-                {settingsConfig.aylik_finans_emtia.map((item) => (
+                {settingsTitle.aylik_finans_emtia.map((item) => (
                   <Text key={item.id} style={styles.text}>
                     {item.name}
                   </Text>
@@ -158,12 +168,12 @@ const SettingsItem = () => {
         )}
       </View>
       <View>
-        {settingsConfig.duyuru && (
+        {settingsTitle.duyuru && (
           <View>
-            <Text style={styles.title}>DUYURU</Text>
+            <Text style={styles.title}>{t("settings.duyuru.title")}</Text>
             <View style={styles.container}>
               <View style={styles.item}>
-                {settingsConfig.duyuru.map((item) => (
+                {settingsTitle.duyuru.map((item) => (
                   <Text key={item.id} style={styles.text}>
                     {item.name}
                   </Text>
@@ -185,12 +195,12 @@ const SettingsItem = () => {
         )}
       </View>
       <View>
-        {settingsConfig.haber && (
+        {settingsTitle.haber && (
           <View>
-            <Text style={styles.title}>HABER</Text>
+            <Text style={styles.title}>{t("settings.haber.title")}</Text>
             <View style={styles.container}>
               <View style={styles.item}>
-                {settingsConfig.haber.map((item) => (
+                {settingsTitle.haber.map((item) => (
                   <Text key={item.id} style={styles.text}>
                     {item.name}
                   </Text>
@@ -212,12 +222,14 @@ const SettingsItem = () => {
         )}
       </View>
       <View>
-        {settingsConfig.etkinlik_takvimi && (
+        {settingsTitle.etkinlik_takvimi && (
           <View>
-            <Text style={styles.title}>ETKİNLİK TAKVİMİ</Text>
+            <Text style={styles.title}>
+              {t("settings.etkinlik_takvimi.title")}
+            </Text>
             <View style={styles.container}>
               <View style={styles.item}>
-                {settingsConfig.etkinlik_takvimi.map((item) => (
+                {settingsTitle.etkinlik_takvimi.map((item) => (
                   <Text key={item.id} style={styles.text}>
                     {item.name}
                   </Text>
@@ -242,12 +254,12 @@ const SettingsItem = () => {
         )}
       </View>
       <View>
-        {settingsConfig.dergi && (
+        {settingsTitle.dergi && (
           <View>
-            <Text style={styles.title}>DERGİ</Text>
+            <Text style={styles.title}>{t("settings.dergi.title")}</Text>
             <View style={styles.container}>
               <View style={styles.item}>
-                {settingsConfig.dergi.map((item) => (
+                {settingsTitle.dergi.map((item) => (
                   <Text key={item.id} style={styles.text}>
                     {item.name}
                   </Text>

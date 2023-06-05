@@ -8,10 +8,12 @@ import { RequestSuggestionSchema } from "../../../validations";
 import ErrorMessage from "../../../components/ErrorMessage";
 import moment from "moment";
 import MaskInput from "react-native-mask-input";
+import { useTranslation } from "react-i18next";
 
 const RequestSuggestionForm = () => {
   const [loading, setLoading] = useState(false);
   const [_showToast] = useToast();
+  const { t } = useTranslation();
 
   const createdDate = moment().format("L LT");
 
@@ -35,10 +37,10 @@ const RequestSuggestionForm = () => {
 
     RequestSuggestionService.newRequestSuggestion(data)
       .then(() => {
-        _showToast.showToast("Başarılı", "Talep gönderildi.", "success");
+        _showToast.showToast("Başarılı", t("req_sugg.basarili"), "success");
       })
-      .catch((error) => {
-        _showToast.showToast("Hata!", "Talep gönderilemedi.", "error");
+      .catch(() => {
+        _showToast.showToast("Hata!", t("req_sugg.hata"), "error");
       })
       .finally(() => {
         setLoading(false);
@@ -64,7 +66,7 @@ const RequestSuggestionForm = () => {
         <View style={{ padding: 15 }}>
           <View style={{ gap: 12 }}>
             <TextInput
-              placeholder="Adınız Soyadınız"
+              placeholder={t("req_sugg.ad_soyad")}
               mode="outlined"
               value={values.nameSurname}
               activeOutlineColor="#2F58CD"
@@ -81,11 +83,26 @@ const RequestSuggestionForm = () => {
               value={values.phone}
               onChangeText={handleChange("phone")}
               onBlur={handleBlur("phone")}
-              placeholder="Telefon (İsteğe bağlı)"
+              placeholder={t("req_sugg.telefon")}
               render={(props) => (
                 <MaskInput
                   {...props}
-                  mask={['(', /\d/,/\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/]}
+                  mask={[
+                    "(",
+                    /\d/,
+                    /\d/,
+                    /\d/,
+                    ")",
+                    " ",
+                    /\d/,
+                    /\d/,
+                    /\d/,
+                    " ",
+                    /\d/,
+                    /\d/,
+                    /\d/,
+                    /\d/,
+                  ]}
                   value={values.phone}
                   onChangeText={handleChange("phone")}
                 />
@@ -97,7 +114,7 @@ const RequestSuggestionForm = () => {
             )}
             <TextInput
               mode="outlined"
-              placeholder="E-posta"
+              placeholder={t("req_sugg.email")}
               value={values.email}
               keyboardType="email-address"
               activeOutlineColor="#2F58CD"
@@ -108,7 +125,7 @@ const RequestSuggestionForm = () => {
               <ErrorMessage error={errors.email} />
             )}
             <TextInput
-              placeholder="Mesaj"
+              placeholder={t("req_sugg.mesaj")}
               multiline
               numberOfLines={4}
               maxLength={100}
@@ -131,7 +148,7 @@ const RequestSuggestionForm = () => {
               disabled={loading ? true : false}
               onPress={handleSubmit}
             >
-              Gönder
+              {t("req_sugg.gonder")}
             </Button>
           </View>
         </View>

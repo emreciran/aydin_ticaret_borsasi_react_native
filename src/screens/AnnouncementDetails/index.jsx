@@ -13,6 +13,7 @@ import * as WebBrowser from "expo-web-browser";
 import RenderHtml from "react-native-render-html";
 import { truncate } from "lodash";
 import { useTranslation } from "react-i18next";
+import { SERVER_URL } from "../../axios";
 
 const AnnouncementDetails = ({ route }) => {
   const { duyuru } = route.params;
@@ -41,7 +42,7 @@ const AnnouncementDetails = ({ route }) => {
         <Image
           style={{ width: "100%", height: 400, resizeMode: "contain" }}
           source={{
-            uri: `https://5a47-212-253-124-232.ngrok-free.app/Images/Announcements/${duyuru.imageName}`,
+            uri: `${SERVER_URL}/Images/Announcements/${duyuru.imageName}`,
           }}
         />
         <RenderHtml source={source} contentWidth={width} />

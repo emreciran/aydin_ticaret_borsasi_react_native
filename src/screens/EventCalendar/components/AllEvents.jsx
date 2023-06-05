@@ -14,12 +14,14 @@ import moment from "moment";
 import ModalPopup from "../../../components/ModalPopup";
 import RenderHTML from "react-native-render-html";
 import { useWindowDimensions } from "react-native";
+import { useTranslation } from "react-i18next";
 
 const AllEvents = ({ events }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedItem, setSelectedItem] = useState();
 
   const { width } = useWindowDimensions();
+  const { t } = useTranslation();
 
   return (
     <>
@@ -29,7 +31,7 @@ const AllEvents = ({ events }) => {
         style={{ padding: 12 }}
       >
         <Text style={{ fontSize: 18, fontWeight: "500" }}>
-          Yaklaşan Etkinlikler
+          {t("event_calendar.yaklasan")}
         </Text>
         {events &&
           events?.map((event) => {
@@ -58,7 +60,9 @@ const AllEvents = ({ events }) => {
                     >
                       <Text style={{ color: "#fff" }}>{event.title}</Text>
                       <Text style={{ color: "#fff" }}>
-                        {event.status !== true ? "Etkinlik iptal edildi" : ""}
+                        {event.status !== true
+                          ? t("event_calendar.cancel")
+                          : ""}
                       </Text>
                     </View>
                     <View style={{ marginTop: 4 }}>

@@ -1,11 +1,11 @@
 import { View, ScrollView, Text } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import SettingsItem from "./components/SettingsItem";
 import styles from "./styles/SettingsItem";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Dropdown } from "react-native-element-dropdown";
 import { useDispatch, useSelector } from "react-redux";
 import { setLanguage } from "../../store/slices/settingsSlice";
+import { useTranslation } from "react-i18next";
 
 const data = [
   { label: "Türkçe", value: "tr" },
@@ -14,13 +14,14 @@ const data = [
 
 const Settings = () => {
   const [isFocus, setIsFocus] = useState(false);
+  const { t } = useTranslation();
 
   const dispatch = useDispatch();
   const { settings } = useSelector((state) => state.settingsSlice);
 
   return (
     <ScrollView>
-      <View style={styles.container}>
+      {/* <View style={styles.container}>
         <Text style={[{ textAlign: "center" }, styles.text]}>Dil seçiniz.</Text>
         <Dropdown
           style={[styles.dropdown, isFocus && { borderColor: "#2F58CD" }]}
@@ -40,10 +41,10 @@ const Settings = () => {
             dispatch(setLanguage({ ...settings, language: item.value }));
           }}
         />
-      </View>
+      </View> */}
       <View style={styles.container}>
         <Text style={[{ textAlign: "center" }, styles.text]}>
-          Bildirilmesini istediğiniz konuları seçiniz.
+          {t("settings.title")}
         </Text>
       </View>
       <SettingsItem />

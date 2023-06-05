@@ -124,6 +124,90 @@
         "pamuk_piyasa_yorum": "Pamuk Piyasa Yorumu",
         "ceksiz_kuru_uzum_yorum": "Çekirdeksiz Kuru Üzüm Yorumu"
       }
+    },
+    "kayit_bulunamadi": "Kayıt Bulunamadı."
+  },
+  "event_calendar": {
+    "tum_etkinlik_goruntule": "Tüm etkinlikleri görüntüle",
+    "etkinlik_takvimi_goruntule": "Etkinlik takvimi görüntüle",
+    "etkinlik_bulunmuyor": "Herhangi bir etkinlik bulunmuyor.",
+    "yaklasan": "Yaklaşan Etkinlikler",
+    "cancel": "Etkinlik iptal edildi"
+  },
+  "req_sugg": {
+    "ad_soyad": "Adınız Soyadınız",
+    "telefon": "Telefon (İsteğe bağlı)",
+    "email": "E-posta",
+    "mesaj": "Mesaj",
+    "gonder": "Gönder",
+    "basarili": "Talep gönderildi.",
+    "hata": "Talep gönderilemedi."
+  },
+  "communication": {
+    "adres": "Adres",
+    "telefon": "Telefon",
+    "fax": "Fax",
+    "email": "E-posta"
+  },
+  "settings": {
+    "title": "Bildirilmesini istediğiniz konuları seçiniz.",
+    "pamuk": {
+      "title": "PAMUK PİYASASI VERİLERİ",
+      "subtitle": {
+        "referans_fiyat": "Pamuk Referans Fiyatları",
+        "dünya_pamuk": "Dünya Pamuk Verileri",
+        "haftalik_pamuk_yorum": "Haftalık Pamuk Piyasası Yorumu",
+        "gunluk_pamuk": "Günlük Pamuk Bülteni",
+        "aylik_pamuk": "Aylık Pamuk Bülteni"
+      }
+    },
+    "ceksiz_kuru_uzum": {
+      "title": "ÇEK.SİZ KURU ÜZÜM VERİLERİ",
+      "subtitle": {
+        "referans_fiyat": "Çek.siz Kuru Üzüm Referans Fiyatları",
+        "haftalik_kuru_uzum_yorum": "Haftalık Çek.siz Kuru Üzüm Yorumu",
+        "aylik_uzum": "Aylık Üzüm Yorumu"
+      }
+    },
+    "tescil_bulten": {
+      "title": "TESCİL BÜLTENLERİ",
+      "subtitle": {
+        "gunluk_tescil": "Günlük Tescil Bülteni",
+        "haftalik_tescil": "Haftalık Tescil Bülteni",
+        "aylik_tescil": "Aylık Tescil Bülteni"
+      }
+    },
+    "aylik_finans_emtia": {
+      "title": "AYLIK FİNANS VE EMTİA BÜLTENLERİ",
+      "subtitle": {
+        "aylik_emtia": "Aylık Emtia Bülteni",
+        "aylik_finans": "Aylık Finans Bülteni",
+        "aylik_dis_ticaret": "Aylık Dış Ticaret Bülteni"
+      }
+    },
+    "duyuru": {
+      "title": "DUYURU",
+      "subtitle": {
+        "duyurular": "Duyurular"
+      }
+    },
+    "haber": {
+      "title": "HABER",
+      "subtitle": {
+        "haberler": "Haberler"
+      }
+    },
+    "etkinlik_takvimi": {
+      "title": "ETKİNLİK TAKVİMİ",
+      "subtitle": {
+        "etkinlik": "Etkinlik Tavimi"
+      }
+    },
+    "dergi": {
+      "title": "DERGİ",
+      "subtitle": {
+        "dergiler": "Dergiler"
+      }
     }
   }
 }

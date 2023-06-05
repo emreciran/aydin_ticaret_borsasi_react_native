@@ -5,10 +5,13 @@ import AgendaComponent from "./components/AgendaComponent";
 import EventService from "../../services/eventService";
 import { useEffect } from "react";
 import AllEvents from "./components/AllEvents";
+import { useTranslation } from "react-i18next";
 
 const EventCalendar = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [events, setEvents] = useState();
+
+  const { t } = useTranslation();
 
   const getEvents = () => {
     EventService.getEvents()
@@ -31,8 +34,8 @@ const EventCalendar = () => {
         style={{ padding: 8 }}
         rightText={
           !isChecked
-            ? "Tüm etkinlikleri görüntüle"
-            : "Etkinlik takvimini görüntüle"
+            ? t("event_calendar.tum_etkinlik_goruntule")
+            : t("event_calendar.etkinlik_takvimi_goruntule")
         }
         onClick={() => setIsChecked(!isChecked)}
       />

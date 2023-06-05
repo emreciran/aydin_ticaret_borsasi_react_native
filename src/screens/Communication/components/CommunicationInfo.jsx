@@ -15,7 +15,7 @@ const CommunicationInfo = () => {
     <View style={styles.container}>
       <View style={styles.item}>
         <FlatList
-          data={communicationInfoConfig}
+          data={communicationInfoConfig()}
           renderItem={({ item }) => <Item item={item} />}
         />
       </View>

@@ -9,15 +9,25 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import RenderHTML from "react-native-render-html";
 import { useWindowDimensions } from "react-native";
 import ModalPopup from "../../../components/ModalPopup";
+import { useTranslation } from "react-i18next";
+import { getLocales } from "expo-localization";
 
-LocaleConfig.locales["tr"] = localeCalendarConfig.tr;
-LocaleConfig.defaultLocale = "tr";
+const deviceLanguage = getLocales()[0].languageCode;
+
+if (deviceLanguage === "tr") {
+  LocaleConfig.locales["tr"] = localeCalendarConfig.tr;
+  LocaleConfig.defaultLocale = "tr";
+} else {
+  LocaleConfig.locales["en"] = localeCalendarConfig.en;
+  LocaleConfig.defaultLocale = "en";
+}
 
 const AgendaComponent = ({ events }) => {
   const [items, setItems] = useState({});
   const [selectedItem, setSelectedItem] = useState();
   const [modalVisible, setModalVisible] = useState(false);
   const today = moment().format("YYYY-MM-DD");
+  const { t } = useTranslation();
 
   const { width } = useWindowDimensions();
 
@@ -68,7 +78,7 @@ const AgendaComponent = ({ events }) => {
               >
                 <Text style={{ color: "#fff" }}>{item.title}</Text>
                 <Text style={{ color: "#fff" }}>
-                  {item.status !== true ? "Etkinlik iptal edildi" : ""}
+                  {item.status !== true ? t("event_calendar.cancel") : ""}
                 </Text>
               </View>
               <View style={{ marginTop: 4 }}>
@@ -88,7 +98,9 @@ const AgendaComponent = ({ events }) => {
   const renderEmptyDate = () => {
     return (
       <View>
-        <Text style={{ padding: 10 }}>Herhangi bir etkinlik bulunmuyor.</Text>
+        <Text style={{ padding: 10 }}>
+          {t("event_calendar.etkinlik_bulunmuyor")}
+        </Text>
       </View>
     );
   };

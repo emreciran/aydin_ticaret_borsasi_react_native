@@ -9,7 +9,8 @@ import {
 import React, { useEffect, useState } from "react";
 import WeeklyMarketCommentService from "../../../../services/weeklyMarketComments";
 import RenderHtml from "react-native-render-html";
-import styles from "../../styles/CottonMarketComments";
+import { SERVER_URL } from "../../../../axios";
+import { useTranslation } from "react-i18next";
 
 const GrapeMarketComments = () => {
   const [data, setData] = useState();
@@ -23,6 +24,8 @@ const GrapeMarketComments = () => {
         console.log(error);
       });
   };
+
+  const { t } = useTranslation();
 
   const source = {
     html: data?.details,
@@ -44,7 +47,7 @@ const GrapeMarketComments = () => {
           <Image
             style={{ width: "100%", height: 400, resizeMode: "contain" }}
             source={{
-              uri: `https://5a47-212-253-124-232.ngrok-free.app/Images/WeeklyMarket/${data?.imageName}`,
+              uri: `${SERVER_URL}/Images/WeeklyMarket/${data?.imageName}`,
             }}
           />
           <RenderHtml source={source} contentWidth={width} />
@@ -53,7 +56,7 @@ const GrapeMarketComments = () => {
         <Text
           style={{ fontSize: 16, color: "#222", padding: 5, fontWeight: 500 }}
         >
-          Kayıt bulunamadı.
+          {t("market.kayit_bulunamadi")}
         </Text>
       )}
     </ScrollView>

@@ -27,7 +27,7 @@ export const fetchSettings = createAsyncThunk("fetchSettings", async (key) => {
 export const changeLanguage = (languageId) => (dispatch) => {
   /*
     Change Language
-     */
+  */
   return i18n.changeLanguage(languageId).then(async () => {
     await AsyncStorage.setItem("language", languageId);
     dispatch(i18nSlice.actions.languageChanged(languageId));

@@ -124,6 +124,90 @@
         "pamuk_piyasa_yorum": "Cotton Market Commentary",
         "ceksiz_kuru_uzum_yorum": "Seedless Raisins Review"
       }
+    },
+    "kayit_bulunamadi": "No Records Found."
+  },
+  "event_calendar": {
+    "tum_etkinlik_goruntule": "View all events",
+    "etkinlik_takvimi_goruntule": "View event calendar",
+    "etkinlik_bulunmuyor": "There are no events.",
+    "yaklasan": "Upcoming Events",
+    "cancel": "Event canceled"
+  },
+  "req_sugg": {
+    "ad_soyad": "Name Surname",
+    "telefon": "Phone (Optional)",
+    "email": "Email",
+    "mesaj": "Message",
+    "gonder": "Send",
+    "basarili": "The request has been sent.",
+    "hata": "The request could not be sent."
+  },
+  "communication": {
+    "adres": "Address",
+    "telefon": "Phone",
+    "fax": "Fax",
+    "email": "Email"
+  },
+  "settings": {
+    "title": "Select the topics you want to be notified.",
+    "pamuk": {
+      "title": "COTTON MARKET DATA",
+      "subtitle": {
+        "referans_fiyat": "Cotton Reference Prices",
+        "dünya_pamuk": "World Cotton Data",
+        "haftalik_pamuk_yorum": "Weekly Cotton Market Commentary",
+        "gunluk_pamuk": "Daily Cotton Bulletin",
+        "aylik_pamuk": "Monthly Cotton Bulletin"
+      }
+    },
+    "ceksiz_kuru_uzum": {
+      "title": "SEEDLESS RAISINE DATA",
+      "subtitle": {
+        "referans_fiyat": "Seedless Raisin Reference Prices",
+        "haftalik_kuru_uzum_yorum": "Weekly Seedless Raisin Review",
+        "aylik_uzum": "Monthly Grape Review"
+      }
+    },
+    "tescil_bulten": {
+      "title": "REGISTRATION BULLETINS",
+      "subtitle": {
+        "gunluk_tescil": "Daily Registration Bulletin",
+        "haftalik_tescil": "Weekly Registration Bulletin",
+        "aylik_tescil": "Monthly Registration Bulletin"
+      }
+    },
+    "aylik_finans_emtia": {
+      "title": "MONTHLY FINANCE AND COMMODITY BULLETINS",
+      "subtitle": {
+        "aylik_emtia": "Monthly Commodity Bulletin",
+        "aylik_finans": "Monthly Finance Bulletin",
+        "aylik_dis_ticaret": "Monthly Foreign Trade Bulletin"
+      }
+    },
+    "duyuru": {
+      "title": "ANNOUNCEMENT",
+      "subtitle": {
+        "duyurular": "Announcements"
+      }
+    },
+    "haber": {
+      "title": "NEWS",
+      "subtitle": {
+        "haberler": "News"
+      }
+    },
+    "etkinlik_takvimi": {
+      "title": "EVENT CALENDAR",
+      "subtitle": {
+        "etkinlik": "Event Calendar"
+      }
+    },
+    "dergi": {
+      "title": "MAGAZINE",
+      "subtitle": {
+        "dergiler": "Magazines"
+      }
     }
   }
 }

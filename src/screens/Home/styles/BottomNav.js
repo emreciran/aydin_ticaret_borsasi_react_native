@@ -4,6 +4,8 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     justifyContent: "center",
+    maxWidth: 350,
+    textAlign: "center",
     gap: 15,
     flexWrap: "wrap",
     borderTopColor: "#111",
@@ -12,6 +14,8 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0.7,
     paddingVertical: 10,
     paddingHorizontal: 10,
+    marginLeft: "auto",
+    marginRight: "auto",
   },
   circle: {
     borderRadius: 21,
@@ -23,7 +27,7 @@ const styles = StyleSheet.create({
   },
   group: {
     alignItems: "center",
-    maxWidth: 60
+    maxWidth: 60,
   },
 });
 

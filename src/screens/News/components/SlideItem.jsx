@@ -11,7 +11,7 @@ import {
 import React from "react";
 import RenderHtml from "react-native-render-html";
 import { ScrollView } from "react-native";
-import { REACT_APP_API_URL } from "@env";
+import { SERVER_URL } from "../../../axios";
 
 const { width } = Dimensions.get("screen");
 
@@ -32,7 +32,7 @@ const SlideItem = ({ item }) => {
         <View style={styles.container}>
           <Animated.Image
             source={{
-              uri: `https://5a47-212-253-124-232.ngrok-free.app/Images/News/${item.imageName}`,
+              uri: `${SERVER_URL}/Images/News/${item.imageName}`,
             }}
             resizeMode="contain"
             style={{
