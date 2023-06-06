@@ -151,6 +151,7 @@
   },
   "settings": {
     "title": "Select the topics you want to be notified.",
+    "language": "Select Language.",
     "pamuk": {
       "title": "COTTON MARKET DATA",
       "subtitle": {

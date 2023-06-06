@@ -21,8 +21,8 @@ const Settings = () => {
 
   return (
     <ScrollView>
-      {/* <View style={styles.container}>
-        <Text style={[{ textAlign: "center" }, styles.text]}>Dil seçiniz.</Text>
+      <View style={styles.container}>
+        <Text style={[{ textAlign: "center" }, styles.text]}>{t("settings.language")}</Text>
         <Dropdown
           style={[styles.dropdown, isFocus && { borderColor: "#2F58CD" }]}
           placeholderStyle={styles.placeholderStyle}
@@ -41,7 +41,7 @@ const Settings = () => {
             dispatch(setLanguage({ ...settings, language: item.value }));
           }}
         />
-      </View> */}
+      </View>
       <View style={styles.container}>
         <Text style={[{ textAlign: "center" }, styles.text]}>
           {t("settings.title")}

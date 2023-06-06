@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     marginRight: "auto",
   },
   circle: {
-    borderRadius: 21,
+    borderRadius: 6,
     width: 45,
     height: 45,
     backgroundColor: "#2F58CD",

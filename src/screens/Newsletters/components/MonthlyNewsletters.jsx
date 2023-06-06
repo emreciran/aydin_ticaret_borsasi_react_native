@@ -36,7 +36,7 @@ const MonthlyNewsletters = () => {
           <FontAwesome name="angle-right" size={36} color="#3A98B9" />
         </TouchableOpacity>
         <TouchableOpacity style={styles.group}>
-          <Text style={styles.text}>{t("bulletin.sub_links.pamukk")}</Text>
+          <Text style={styles.text}>{t("bulletin.sub_links.pamuk")}</Text>
           <FontAwesome name="angle-right" size={36} color="#3A98B9" />
         </TouchableOpacity>
       </ScrollView>
