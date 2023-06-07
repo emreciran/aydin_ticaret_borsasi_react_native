@@ -1,3 +1,26 @@
+IOS ScreenshotS
+
+![IMG_5377](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/a91db0bf-fa75-4860-89f7-5401cd43b61a)
+![IMG_5378](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/24f6a396-9425-4174-b9a6-a67f4e7039da)
+![IMG_5379](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/1a8793fa-8be5-428c-a984-b82199ae857e)
+![IMG_5380](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/6f0610bd-18cd-4816-90f0-9ebb38d4c1ca)
+![IMG_5381](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/668dbb79-3e51-410b-a3d1-1279d1c197cb)
+![IMG_5382](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/65853705-e9bd-4c01-a121-e9041a8f46b5)
+![IMG_5383](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/9a8b9bf6-ecc1-45f6-a3f1-ba27f50f1319)
+![IMG_5384](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/e701a367-48fd-4ca6-8b04-72f2f2b6ac97)
+![IMG_5385](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/fed667db-0226-410d-85b3-b1976574c536)
+![IMG_5386](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/5dfd215f-fd80-4095-9aba-94efd5359217)
+![IMG_5387](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/96467848-387f-4035-bccd-be91e2ee792c)
+![IMG_5388](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/d070edb6-88c6-42ac-8d78-1080f55c4e5f)
+![IMG_5389](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/48425d8f-c0af-44c5-9264-445758ae3075)
+![IMG_5390](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/0dfd6bcc-31c0-49c9-bb87-744f93be47a8)
+![IMG_5391](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/f4a3482c-1da3-48e9-96b8-d52cae6ce35d)
+![IMG_5392](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/2d650c09-05f0-498f-9a90-10b0a5946873)
+![IMG_5393](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/975bb3d2-2fd3-4281-be90-661b270b1775)
+
+
+ANDROID ScreenshotS
+
 ![1](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/c22e1a4b-037c-43c0-95d4-e5ffd55b9f1b)
 ![2](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/17fc98a5-3c9a-46ca-9b05-ce4978560b75)
 ![3](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/0f1a7f10-0e01-41d3-90be-545ff95924f1)
