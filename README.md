@@ -1,4 +1,4 @@
-# IOS Screenshots
+## IOS Screenshots
 
 ![IMG_5377](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/a91db0bf-fa75-4860-89f7-5401cd43b61a)
 ![IMG_5378](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/24f6a396-9425-4174-b9a6-a67f4e7039da)
@@ -19,7 +19,7 @@
 ![IMG_5393](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/975bb3d2-2fd3-4281-be90-661b270b1775)
 
 
-# ANDROID Screenshots
+## ANDROID Screenshots
 
 ![1](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/c22e1a4b-037c-43c0-95d4-e5ffd55b9f1b)
 ![2](https://github.com/emreciran/aydin_ticaret_borsasi_react_native/assets/63744360/17fc98a5-3c9a-46ca-9b05-ce4978560b75)
